@@ -1,0 +1,10 @@
+﻿Category,Metric,Value,Source
+Brightness_Data,Total_Variants,500.0,GFP_data.xlsx & Sarkisyan 2016
+Brightness_Data,Mean_Brightness,1.3037,GFP_data.xlsx & Sarkisyan 2016
+Brightness_Data,Max_Brightness,3.483,GFP_data.xlsx & Sarkisyan 2016
+FPbase_Data,Total_GFP_Variants,1110.0,fpbase.org
+FPbase_Data,Variants_with_Brightness,683.0,fpbase.org
+Thermal_Stability,Total_Measurements,28.0,ProTherm / Literature
+Mutations,UniProt_Annotated_Mutations,58.0,UniProt P42212
+Reference_Sequences,Total_Sequences,11.0,Comprehensive + Training Data
+Candidate_Positions,Total_Positions,45.0,Expert Curation

@@ -1,0 +1,350 @@
+================================================================================
+项目设计文档摘要汇总
+================================================================================
+
+
+### [3] 竞赛官方说明 PDF
+------------------------------------------------------------
+22002266 PPrrootteeiinn DDeessiiggnn iinn SSyynnbbiioo cchhaalllleennggeess
+11.. 目目标标、、规规则则、、提提交交内内容容
+本赛季基准对照升级为 ssffGGFFPP。赛道旨在挑战您运用计算生物学、生物信息学以及可编
+排的Agent工作流，在全全序序列列放放开开的条件下，设计出兼具极高初始亮度与极限热稳定性
+的新型绿色荧光蛋白（GFP）“六边形战士”
+11..11 您您的的提提交交内内容容（（核核心心序序列列文文件件、、说说明明文文档档、、开开源源仓仓库库代代码码））
+参赛队伍需在 SynBio Challenges 官网严格按以下格式提交三项内容：
+ 设设计计序序列列文文件件 ((..ccssvv))
+○ 数数量量与与长长度度：每队最多提交 66 条条 自己设计的蛋白序列。序列长度严格限制在 222200 --
+225500 aaaa 之间（没有以往位点数量的限制，本次为全全序序列列自自由由设设计计）。
+○ 字字符符规规范范：序列必必须须以以蛋蛋氨氨酸酸（（MM））开开头头。仅允许使用 20 种标准氨基酸的大写字母，
+严禁包含终止密码子（如 *）或标点符号。
+○ 本次由大设施统一合成 DNA 模板（已含启动子、RBS 及终止子，且浓度标准化），
+因此您您只只需需提提供供氨氨基基酸酸序序列列。本赛事使用开源 DNA Chisel 算法执行反向翻译。
+○ 请在提交前逐条与 Exclusion_List.csv 中的序列做完全一致性比对，确保您提交的
+6 条序列均未出现在我们提供的 Exclusion_List.csv 文件中。
+○ 表表头头规规范范：共三列，必须包含 Team_Name (队伍名), Seq_ID (如1,2,3...),
+Sequence (氨基酸序列)，可参考submission_template.csv
+ 设设计计思思路路与与说说明明文文档档 ((..ppddff))
+○ 展示从零开始或组合现有模型（如 ESM, ProteinMPNN 等）生成序列的完整流程。
+阐述您的算法管线、如何平衡亮度和稳定性目标，以及最终筛选这 6 条序列的原因。
+○ LLM AAggeenntt：鼓励并欢迎使用各种大模型与代码 Agent。若使用智能体设计，需在
+文档中展示 Agent 的逻辑树和关键执行日志，以确保过程可复现。
+○ 该文档将作为评审团队的展示与思路参考。在客观得分相近的情况下，优先选择思
+路清晰、技术路径前沿且开源的队伍进行宣传和展示。
+ 开开源源项项目目链链接接 ((UURRLL))
+○ 须提交公开的 GitHub / GitLab / HuggingFace 等代码托管仓库链接，确保其它队伍
+可以复现。
+○ 根根目目录录需需包包含含 RREEAADDMMEE..mmdd，明确说明环境配置要求、模型依赖库以及推理代码运
+行方式。
+11..22 自自动动化化实实验验流流程程 ((由由大大设设施施执执行行))
+所有序列的测试由大设施统一执行““一一次次表表达达 ++ 两两次次读读数数””流水线。本次实验采用的无
+细胞体系为 NNEEBBeexxpprreessss CCeellll--ffrreeee EE.. ccoollii PPrrootteeiinn SSyynntthheessiiss SSyysstteemm。
+● 步步骤骤一一：：初初始始亮亮度度检检测测
+1. 表表达达：在黑色平底 96 孔板中加入 Cell-Free 反应液与标准化浓度的 DNA 模板。
+置于恒温振荡器，3300°°CC 孵育 3 小时（保持振荡供氧）。
+2. 成成熟熟：降温至 2255°°CC 静置 30 分钟，确保发色团完全成熟。
+3. 读读数数 11：使用酶标仪读取初始荧光强度（Ex: 485nm / Em: 515nm），记为您序列
+的 。同批次野生型 sfGFP 的亮度记为 。
+● 步步骤骤二二：：极极端端热热稳稳定定性性检检测测
+1. 加加热热：自动化工作站将无细胞表达产物转移至 PCR 板并封膜。在 PCR 仪中执行
+7722°°CC 高温加热 1100 分分钟钟。
+2. 复复性性：PCR 仪自动降温至 2255°°CC 并保持 55 分分钟钟（消除温度的物理淬灭效应，仅测
+试因变性导致的不可逆荧光丧失）。
+3. 读读数数 22：读取加热后的残余荧光强度，记为 。
+11..33 得得分分规规则则
+本次赛事的评分采用“双能乘积制”，要求挑战者拒绝偏科，追求极限。
+● 项项一一：：相相对对亮亮度度得得分分 —— 评估蛋白在 Cell-Free 体系中的折叠效率与消光系数。
+● 项项二二：：热热稳稳定定性性保保留留率率 —— 评估蛋白抵抗 72°C 高温变性的能力。
+● 极极低低亮亮度度阈阈值值淘淘汰汰
+若 某 条 提 交 序 列 的 初 始 亮 度 不不 到到 同同 批批 次次 野野 生生 型型 ssffGGFFPP 的的 3300%% （ 即
+），说明该序列基础结构/功能遭到严重破坏，该序列直接
+淘汰出局，此条序列两项及总成绩均记为 00 分分。
+● 双双能能综综合合得得分分
+● 排排名名与与奖奖项项分分配配
+○ 金金//银银奖奖：我们将以您提交的 6 条序列中得得分分最最高高的的一一条条（（BBeesstt TToopp--11））作为本队的
+最终打榜成绩进行排榜。前 30% 金奖、接下来若干比例银奖。
+○ 此外，设立由单项分决出的最最佳佳亮亮度度奖奖和最最佳佳热热稳稳定定奖奖作为独立荣誉。
+22.. 数数据据与与资资料料介介绍绍
+22..11 GGFFPP 突突变变与与亮亮度度数数据据
+提供涵盖历史多品种 GFP 蛋白的数据集（GFP_data.xlsx），可用作大模型微调训练、
+序列-功能关系的预训练。
+(注：原始数据虽多为历史 avGFP/amacGFP 等短变体，并不直接等同于本赛季的
+sfGFP 提交空间，但掌握其中的普遍折叠密码和发色团微环境可很好地迁移至全序列
+设计)
+22..22 往往年年的的TToopp 序序列列
+GFP_data.xlsx 中sheet-beforetopseqs 提供历年优秀序列共 20 条（2024、2025 各
+10 条）及对应 year、sequence 字段，供您追溯历史特征工程设计思路。
+22..33 蛋蛋白白参参考考序序列列与与蛋蛋白白质质结结构构 PPDDBB 推推荐荐
+数据包提供 sfGFP、avGFP、amacGFP、cgreGFP、ppluGFP 共五条参考氨基酸序列
+及推荐 PDB（见 AAseqs of 5 GFP proteins.txt），供选手构建三维图神经网络（GNN）、
+Structure-based Agent 或逆向折叠模型（ProteinMPNN）时使用
+>sfGFP
+MSKGEELFTGVVPILVELDGDVNGHKFSVRGEGEGDATNGKLTLKFICTTGKLPVPWPTLVTTLTYGVQCFSRYPD
+HMKRHDFFKSAMPEGYVQERTISFKDDGTYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNFNSHNVYIT
+ADKQKNGIKANFKIRHNIVEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSVLSKDPNEKRDHMVLLEFVTAAGI
+THGMDELYK
+# recommend PDB: 2B3P
+22..44 排排除除序序列列列列表表
+Exclusion_List.csv。此文件包含禁止重复提交的序列名单（包含历史测过的序列、基于
+FPbase的天然或已知变体等），任何与排除列表中任意一条序列完全一致的提交序列
+视为无效，另可参考 FPbase( https://www.fpbase.org/ ) 等公开资源避免重复已知
+全长变体。
+
+
+### [5] 训练数据CSV (前30行)
+------------------------------------------------------------
+GFP type,aaMutations,Brightness
+egGFP,E172V,0.611839
+avGFP,Y66F,0.565232
+avGFP,N149K,1.080723
+avGFP,R73H,1.40651
+egGFP,F64L,3.377105
+avGFP,F64L,1.866809
+avGFP,E222G,1.514133
+avGFP,R96H,1.34015
+avGFP,D190N,1.955384
+avGFP,V163A,3.070352
+avGFP,L231F,1.307105
+sfGFP,S65T,2.860615
+avGFP,Y66H,1.913105
+sfGFP,M153T,2.109228
+avGFP,F64L,2.380305
+avGFP,S72A,1.716431
+rfGFP,F223S,0.739926
+egGFP,S175G,1.022765
+avGFP,D190N,0.353233
+egGFP,F99S,1.897148
+avGFP,R73H,1.867186
+avGFP,Y66F,1.185418
+sfGFP,S175G,1.570444
+sfGFP,L236V,0.906481
+avGFP,T225S,1.663735
+avGFP,WT,0.906216
+avGFP,Y66F,1.686284
+egGFP,S205V,3.080351
+rfGFP,S65G,0.425539
+
+
+
+### [6] 生成的管线方案文档结构
+------------------------------------------------------------
+[Heading 1] 目录
+[Normal] 阶段二A：路线A —— PLM嵌入 + ML回归 + 约束采样（第2-6天）
+[Normal] 阶段二B：路线B —— ProteinMPNN结构条件设计（第3-7天）
+[Heading 1] 第〇部分：零基础预实验 —— 30分钟快速上手
+[Heading 2] 0.1 预实验目标
+[Heading 2] 0.2 环境准备（一次性，约15分钟）
+[Heading 3] 0.2.1 安装 Python 依赖
+[Normal] 打开终端（Anaconda Prompt 或 PowerShell），依次执行以下命令：
+[Normal] conda create -n gfp_design python=3.10 -y
+[Normal] # 2. 安装 PyTorch（CPU 版本，零基础友好；有 NVIDIA GPU 则去掉 --index-url）
+[Normal] pip install torch --index-url https://download.pytorch.org/whl/cpu
+[Normal] pip install fair-esm openpyxl scikit-learn pandas numpy
+[Normal] pip install transformers sentencepiece    # SaProt 备用
+[Heading 3] 0.2.2 验证安装
+[Normal] from sklearn.ensemble import RandomForestRegressor
+[Normal] print('All imports successful!')
+[Normal] print(f'PyTorch version: {torch.__version__}')
+[Normal] print(f'CUDA available: {torch.cuda.is_available()}')
+[Heading 3] 0.2.3 确认数据文件
+[Heading 2] 0.3 预实验运行（约10分钟）
+[Heading 3] 0.3.1 最小化运行命令
+[List Bullet] esm2_t6_8M_UR50D：最小的 ESM 模型（~8M 参数），CPU 可运行，3-5 分钟完成
+[List Bullet] --max-mutations 3：每序列最多 3 个突变（低复杂度，快速生成）
+[List Bullet] --n-candidates 100：仅生成 100 个候选（而非正式运行的 500-1000）
+[List Bullet] --max-train-samples 1000：最多使用 1000 条训练数据
+[Heading 3] 0.3.2 预期输出
+[Normal] ============================================
+[Normal] TOP 6 CANDIDATES (Predicted Brightness)
+[Normal] ============================================
+[Normal] Sequence ID    Mutations              PredictedBrightness
+[Normal] Candidate_1    F64L:V163A:S65T        3.4521
+[Normal] Candidate_2    S65T:M153T:F64L        3.2108
+[Normal] Saved top 6 candidates to ./output/top_candidates.csv
+[Normal] 同时在 ./output/ 目录下生成 top_candidates.csv 文件。
+[Heading 3] 0.3.3 预实验检查清单
+[List Bullet] ✓ ESM 模型成功下载并加载（模型文件自动缓存至 ~/.cache/torch/hub/）
+[List Bullet] ✓ 训练数据正确加载（日志显示 "Filtered down to XX avGFP entries"）
+[List Bullet] ✓ 嵌入生成完成（日志显示 "Embedding generation completed in Xs"）
+[Heading 2] 0.4 预实验常见问题排查
+[Heading 2] 0.5 预实验交付物
+[List Number] 一份 top_candidates.csv（6 条预测序列及其突变描述）
+[Heading 1] 第一部分：项目背景与竞赛约束
+[Heading 2] 1.1 竞赛基本信息
+[Heading 2] 1.2 评分机制深度解析
+[List Bullet] F_final：72°C 热处理后的残余荧光强度（评估热稳定性）
+[List Bullet] 综合得分 = (F_initial / F_initial_WT) × (F_final / F_initial)
+[List Bullet] 淘汰线：F_initial < 0.3 × F_initial_WT 的序列直接淘汰
+[Normal] 第一项 (F_initial / F_initial_WT) 衡量亮度是否优于野生型；第二项 (F_final / F_initial) 衡量热处理后荧光保留率（即热稳定性）。两项相乘意味着——既亮又稳定的序列才能获得高分。单独亮但不耐热（
+[Heading 2] 1.3 关键生物学约束
+[Normal] 基于 sfGFP 晶体结构（PDB: 2B3P）的位点功能注释（详见 sfGFP_氨基酸功能全注释.docx），我们将 238 个氨基酸位点分为四个约束等级：
+[Heading 3] 约束等级一：绝对禁止突变（37 个位点）
+[Normal] 这些位点突变将导致荧光完全消失或蛋白无法折叠，任何候选序列必须保留野生型残基：
+[List Bullet] 发色团核心与成熟催化：Y66, G67, R96, E222, H148, Q69, Q94, T203, S205, E95
+[List Bullet] 疏水核心锚定（仅限芳香族保守替换）：F27, F46, F83, F71, F100, F130, F165, F223, W57, F166, F114, F8, F84
+[List Bullet] β-转角关键 Gly：G31, G33, G35, G51, G91, G116, G127, G134, G160, G174, G189, G228
+[List Bullet] β-转角关键 Pro：P54, P56, P58, P75, P89, P192
+[Heading 3] 约束等级二：严重受限（约 50 个位点）
+[Normal] 仅允许保守替换（如疏水 → 疏水、小残基 → 小残基）。包括疏水核心 Leu/Val/Ile 位点、发色团邻近疏水残基（V68, V150, V93, L60 等）、桶底部疏水密封残基。
+[Heading 3] 约束等级三：可突变但需谨慎（约 60 个位点）
+[Normal] 包括表面暴露残基、环区残基、C 端柔性区域等，突变容忍度较高，是设计多样性的主要来源。
+[Heading 3] 约束等级四：正向设计热点（约 20 个位点）
+[Normal] 已知的增强突变位点——这些是天然存在的 "Nature 已替你验证过" 的设计素材：
+[List Bullet] F64L：增强 37°C 折叠效率（sfGFP/EGFP 共有核心突变）
+[Heading 2] 1.4 已有工作基础
+[Heading 1] 第二部分：正式管线总体架构
+[Heading 2] 2.1 设计哲学：三路线并行 + 集成筛选
+[Normal] 基于文献调研和竞赛约束，采取"三条互补技术路线并行生成候选序列，统一通过多维度筛选确定最终 6 条提交序列"的策略。三条路线各具优势，互为补充：
+[Heading 2] 2.2 管线总体流程（五阶段）
+[List Number] 准备结构模板（sfGFP PDB: 2B3P 及其他高分辨率结构）
+[List Number] 编译禁止突变位点约束文件（37 个绝对禁止 + ~50 个严重受限）
+[List Number] 路线 A：升级版 ESM/SaProt + XGBoost 集成 + 约束 MCMC 采样
+[List Number] 路线 B：ProteinMPNN 结构条件生成 + AlphaFold2 结构验证
+[List Number] 热稳定性预测筛选（SPURS / TemBERTure / ProtSSN）
+[List Number] 结构完整性验证（AlphaFold2 / ESMFold pLDDT + pTM）
+[Heading 2] 2.3 技术栈总览
+[Heading 1] 第三部分：分步骤详细实施方案
+[Heading 2] 阶段一：数据准备与增强（第 1-3 天）
+[Heading 3] 步骤 1.1：训练数据清洗与质量评估
+[Normal] 输入文件：data/GFP_training_data.csv
+[Normal] 检查 aaMutations 列的重复条目，对于同一突变有多个 Brightness 值的，取均值并记录标准差（评估实验重复性）。
+[Normal] df = pd.read_csv('data/GFP_training_data.csv')
+[Normal] df_clean = df.groupby(['GFP type', 'aaMutations'])['Brightness'] \
+[Normal] .agg(['mean', 'std', 'count']).reset_index()
+[List Bullet] 对于 F64L 突变，确认 Brightness 是否在合理范围（avGFP 中 F64L 亮度约 1.8-2.4 倍 WT）
+[List Bullet] Y66F、Y66H 等发色团突变亮度应显著偏离 WT（颜色改变而非亮度增强）
+[List Bullet] 剔除标注为 "WT" 但在不同 GFP type 下亮度差异 > 3σ 的异常条目
+[List Bullet] 使用 IQR 方法：超出 Q1 - 1.5×IQR 至 Q3 + 1.5×IQR 范围的标记为可疑
+[List Bullet] 从文献（Sarkisyan et al. Nature 2016）补充 GFP 适应度景观数据（~51,000 条 avGFP 突变数据）
+[List Bullet] 从 Nature Communications 2023 (htFuncLib) 补充设计的 GFP 功能变体数据
+[Heading 3] 步骤 1.2：构建禁止突变约束矩阵
+[Normal] 创建 238×20 的二进制约束矩阵 constraint[position][AA]，将每个位点-氨基酸组合分类为：
+[Normal] def is_mutation_allowed(wt_seq, position_1based, new_aa):
+    """检查某位点突变是否在允许范围内"""
+    pos_idx = position_1based - 1
+  
+[Heading 3] 步骤 1.3：多序列比对（MSA）构建
+[List Number] 收集 GFP 家族序列：从 UniProt 检索 GFP-like 蛋白，使用 jackhmmer 迭代搜索（3 轮，E-value < 1e-10），目标收集 500-2000 条同源序列
+[List Number] MSA 质量控制：移除 gap 比例 > 50% 的序列；移除序列一致性 < 20% 或 > 98% 的序列；最终保留 200-800 条高质量同源序列
+[List Number] 从 MSA 提取：位点保守性评分（Shannon 熵）、共进化残基对（CCMpred/GREMLIN 耦合矩阵）、与已知禁止突变位点交叉验证
+[Heading 2] 阶段二A：路线 A —— PLM 嵌入 + ML 回归 + 约束采样（第 2-6 天）
+[Heading 3] 步骤 2A.1：嵌入提取升级
+[List Bullet] 从 esm2_t6_8M 升级到 esm2_t30_150M_UR50D（更好表达能力，GPU 推荐）或 esm2_t33_650M_UR50D（最佳，需 16GB+ 显存）
+[List Bullet] 同步使用 SaProt（结构感知嵌入），与 ESM 嵌入拼接或分别建模后集成
+[List Bullet] 在发色团口袋残基（65-67, 96, 222, 148, 203, 205 等）附近使用局部注意力加权嵌入
+[Normal] X_esm = get_esm_embeddings(sequences, ...)
+np.save('cache/esm_embeddings_150M.npy', X_esm.numpy())
+[Heading 3] 步骤 2A.2：ML 模型升级
+[List Bullet] XGBoost + 随机森林 + KNN Ridge：三模型集成，取均值预测
+[List Bullet] 留一 GFP 类型交叉验证（如用 avGFP+egGFP 训练，预测 sfGFP 变体）
+[Heading 3] 步骤 2A.3：约束 MCMC 序列采样
+[Normal] 替代当前随机采样策略，使用 MCMC 进行有偏向的序列空间探索：
+[List Bullet] 接受准则（Metropolis-Hastings）：P_accept = min(1, exp(-(pred_score_new - pred_score_old)/T))
+[List Bullet] T（温度参数）控制探索 vs 利用的平衡——高 T 广泛探索，低 T 精细搜索
+[List Bullet] 运行 10-20 条独立 MCMC 链（不同随机种子），每条链采样 500-1000 步
+[List Bullet] 合并所有链的样本并去重，生成候选池（预期 5000-10000 条唯一序列）
+[Heading 3] 步骤 2A.4：路线 A 最终候选筛选
+[List Number] 确保 Top 100 的突变多样性（来自相同突变组合的序列仅保留最高分）
+[Heading 2] 阶段二B：路线 B —— ProteinMPNN 结构条件设计（第 3-7 天）
+[Heading 3] 步骤 2B.1：环境配置
+[Normal] git clone https://github.com/dauparas/ProteinMPNN.git
+[Normal] # 模型权重自动下载至 vanilla_model_weights/ 和 soluble_model_weights/
+[Heading 3] 步骤 2B.2：结构模板准备
+[Normal] 首选模板：sfGFP 晶体结构 PDB 2B3P（分辨率 1.45Å，链 A 含完整发色团）。
+[Normal] PDB 预处理：提取单链（链 A）→ 移除水分子和异源分子（保留发色团 CRO）→ 重新编号残基（从 1 开始）。
+[Normal] 固定残基设置（Tied positions）—— 以下残基在 ProteinMPNN 采样中固定不变：
+[List Bullet] 发色团氢键网络：Q69, Q94, E95, H148, T203, S205
+[List Bullet] 疏水核心锚定：F27, F46, F83, F71, F100, F130, F165, F223, W57 等
+[Normal] 共计固定约 50-60 个残基，允许 ProteinMPNN 设计其余 ~180 个残基。
+[Heading 3] 步骤 2B.3：ProteinMPNN 采样运行
+[Normal] --pdb_path ./proteinmpnn_input.pdb \
+[Normal] --out_folder ./proteinmpnn_output/ \
+[Normal] --sampling_temp "0.1 0.2 0.3 0.5" \
+[Normal] --tied_positions "65 66 67 96 222 69 94 95 148 203 205 ..." \
+[Normal] 参数说明：--num_seq_per_target 500（每温度采样 500 条）、--sampling_temp（多温度采样，低温接近 WT，高温更多样化）、--tied_positions（固定残基列表）、--use_soluble_
+[Heading 3] 步骤 2B.4：AlphaFold2 结构验证
+[Normal] 对 ProteinMPNN 生成的所有序列进行快速结构预测验证：
+[Normal] # 安装 ColabFold 本地版（参考 github.com/sokrypton/ColabFold）
+[Normal] colabfold_batch proteinmpnn_sequences.fasta \
+[Normal] 随后使用 CD-HIT 聚类（sequence identity cutoff 90%），从每个聚类中选取最高 pLDDT 代表序列，目标获得 50-100 条通过结构验证的候选。
+[Heading 2] 阶段二C：路线 C —— 进化分析引导的理性设计（第 2-5 天）
+[Heading 3] 步骤 2C.1：共识序列分析
+[Normal] 基于 MSA（步骤 1.3 的结果）计算每个位点的共识氨基酸：
+[Normal] from Bio.Align import AlignInfo
+summary = AlignInfo.SummaryInfo(msa_alignment)
+consensus = summary.dumb_consensus(thresh
+[Normal] 将 sfGFP 序列与共识序列逐位比对，标记 sfGFP 残基频率 < 30% 的位点（可能是非最优残基），对这类位点优先突变为共识氨基酸。
+[Heading 3] 步骤 2C.2：已知增强突变组合设计
+[Normal] 综合文献报道的 GFP 增强突变，设计组合方案。以 sfGFP 为骨架（已含多个增强突变），额外叠加 2-4 个增强突变，确保突变总数 ≤ 6。使用 Rosetta ddG 或 FoldX 快速筛选稳定组合。预期生成 50-100 条理性组
+[List Bullet] F99S + M153T + V163A（三突变组合显著增强折叠）
+[List Bullet] S30R + Y39N + N105T + Y145F + I171V + A206V
+[Heading 3] 步骤 2C.3：共进化引导的突变设计
+[Normal] 使用 CCMpred 分析 MSA 中的共进化残基对。若某位点发生突变，其共进化配对位点可能需要补偿突变。识别 sfGFP 中违背共进化模式的位点对，设计补偿突变以恢复共进化模式。只考虑耦合强度 top 100 的残基对，并与已知禁止突变位
+[Heading 2] 阶段三：多维度虚拟筛选（第 6-10 天）
+[Heading 3] 步骤 3.1：候选池合并与去重
+[Normal] 合并三条路线的候选序列（路线 A ~100 条、路线 B ~50-100 条、路线 C ~50-100 条），合并候选池预期规模 150-250 条唯一序列。
+[Normal] 去重与预筛选流程：精确序列匹配去重 → 序列一致性 > 98% 的聚类（CD-HIT，每类保留代表性序列）→ 与排除列表交叉比对 → 与禁止突变约束矩阵交叉验证 → 去除含 > 6 个突变的序列。
+[Heading 3] 步骤 3.2：亮度多模型预测
+[Heading 3] 步骤 3.3：热稳定性多模型预测
+[List Bullet] 对候选序列的每个突变位点查询 SPURS 预测的 ΔΔG，累积 ΣΔΔG < -2.0 kcal/mol 视为优良
+[List Bullet] 序列-结构融合零样本预测，无需 MSA，ProteinGym 基准上表现优异
+[List Bullet] 将 SPURS ΔΔG、TemBERTure Tm、ProtSSN 评分标准化至 [0,1]
+[List Bullet] 取三模型加权平均（SPURS 0.4, TemBERTure 0.3, ProtSSN 0.3）
+[Heading 3] 步骤 3.4：结构完整性与可表达性
+[List Number] AlphaFold2 快速预测 Top 50 候选的结构（pLDDT > 85, pTM > 0.75）
+[List Number] 可溶性预测（ProteinMPNN soluble model 评分，或 CamSol 等工具）
+[List Number] 聚集倾向预测（TANGO/AGGRESCAN，排除含强聚集倾向区域的序列）
+[Heading 2] 阶段四：Top 候选精选（第 10-13 天）
+[Heading 3] 步骤 4.1：多目标 Pareto 前沿分析
+[Normal] 对通过所有筛选的候选序列（预期 30-50 条），进行多目标优化分析：
+[List Number] 构建二维目标空间：X 轴 = 亮度预测值，Y 轴 = 热稳定性预测值
+[List Number] 识别 Pareto 前沿——在两个目标上均不被其他序列支配的序列
+[Heading 3] 步骤 4.2：突变策略多样性保障
+[Normal] 为确保 6 条提交序列覆盖不同的设计策略，按以下维度分组并各选最优代表：
+[Heading 3] 步骤 4.3：人工专家审核
+[List Bullet] 参考 sfGFP_氨基酸功能全注释.docx 确认每个突变位点功能
+[Heading 3] 步骤 4.4：替补方案
+[Heading 2] 阶段五：最终验证与提交准备（第 13-18 天）
+[Heading 3] 步骤 5.1：DNAChisel 反向翻译验证
+[Normal] from dnachisel import reverse_translate, CodonOptimize
+[Normal] dna = reverse_translate(aa_sequence, organism="E. coli")
+[Normal] sequence=dna, species="e_coli", method="use_best_codon"
+[Normal] optimized_dna = problem.resolve()
+[Normal] 检查要点：DNA 长度（aa 长度 × 3）、限制性酶切位点（避免 EcoRI/BamHI）、GC 含量（40-60%）、polyA/polyT 转录终止风险、起始/终止密码子。
+[Heading 3] 步骤 5.2：序列合规性自动化检查
+[Normal] def validate_submission(sequences, exclusion_set, constraint_matrix):
+    """自动化检查提交序列的合规性"""
+    errors = []
+    for i,
+[Heading 3] 步骤 5.3：提交文件准备
+[List Number] 填写：Sequence ID（Candidate_1 至 Candidate_6）、Mutations（突变描述）、Sequence（完整序列）
+[List Number] 另存 Excel 版本（含元数据：预测亮度、预测 Tm、pLDDT、筛选路线来源）作为内部记录
+[Heading 1] 第四部分：24 天时间规划
+[Heading 2] 4.1 甘特图式时间表
+[Heading 2] 4.2 关键时间节点
+[List Bullet] 6/16（第 10 天）：第一轮筛选完成，候选池缩小至 30-50 条
+[List Bullet] 6/29（第 23 天）：建议提前 2 天提交（避免截止日期前系统拥堵）
+[Heading 2] 4.3 资源需求预估
+[Heading 1] 第五部分：风险识别与应对策略
+[Heading 1] 附录
+[Heading 2] 附录 A：关键命令速查表
+[Heading 2] 附录 B：推荐项目文件结构
+[Normal] ├── data/                    # 原始数据
+[Normal] ├── 代码/                    # Python 脚本
+[Normal] │   ├── gfp_design.py        # 主管线（ESM + RF）
+[Normal] │   ├── gfp_design_v2.py     # 升级版（XGBoost + MCMC）
+[Normal] │   └── utils.py             # 辅助函数库（约束检查等）
+[Normal] ├── _过程文件/               # 中间过程脚本和临时文件
+[Normal] ├── cache/                   # 缓存
+[Normal] ├── 运行结果/                # 输出结果
+[Normal] │   └── submission_metadata.xlsx
+[Normal] ├── logs/                    # 运行日志
+[Heading 2] 附录 C：核心参考文献速查
+[Normal] 详见"GFP蛋白质设计文献与工具调研报告.docx"，以下为最核心的 5 篇：
+[List Bullet] [1] ESM3/esmGFP — Science 387:850-858 (2025). DOI: 10.1126/science.ads0018
+[List Bullet] [2] GeoEvoBuilder — PNAS 122:e2504117122 (2025). DOI: 10.1073/pnas.2504117122
+[List Bullet] [3] ProteinMPNN for FP — Protein Science 33:e70002 (2024). DOI: 10.1002/pro.70002
+[List Bullet] [4] SPURS — Nature Communications (2025). DOI: 10.1038/s41467-025-56475-9
+[List Bullet] [5] YuzuFP — Communications Chemistry 8:174 (2025). DOI: 10.1038/s42004-025-01573-4
+[List Bullet] [6] Sarkisyan et al. — Nature 533:397-401 (2016). GFP 适应度景观基准数据集
+
+总段落: 489, 总表格: 11

@@ -1,0 +1,3 @@
+﻿ID,"Protein Name",Mutation,PDB,T,pH,Method,Measure,ΔΔG,ΔTm,Reference
+9019,"Beta amyloid peptide-green fluorescent protein",F19D,'-,298.15,7,GdnHCl,Abs,2.78,'-,"PMID: 18840434"
+,,,,,,,,,,

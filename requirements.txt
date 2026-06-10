@@ -1,0 +1,8 @@
+fair-esm
+openpyxl
+scikit-learn
+pandas
+numpy
+torch
+transformers
+sentencepiece

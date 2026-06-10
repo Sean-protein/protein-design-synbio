@@ -1,0 +1,48 @@
+# === API 密钥 & 凭据 ===
+.env
+.env.*
+*.key
+*secret*
+*credentials*
+*token*
+
+# === Claude 本地配置（含环境变量路径等信息） ===
+.claude/settings.local.json
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === Node ===
+node_modules/
+
+# === 缓存 & 模型文件（体积大，不适合 Git） ===
+cache/
+
+# === 系统和 IDE ===
+.DS_Store
+Thumbs.db
+*.lnk
+.vscode/
+.idea/
+
+# === 大文件 / 二进制 ===
+*.zip
+*.exe
+*.msi
+*.pkl
+*.pt
+*.h5
+*.arrow
+*.node
+
+# === 过程文件中可能含敏感数据的文件 ===
+_过程文件/*.json
+_过程文件/SC2025/

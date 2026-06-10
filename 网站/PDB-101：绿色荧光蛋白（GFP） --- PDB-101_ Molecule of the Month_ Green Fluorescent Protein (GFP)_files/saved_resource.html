@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://pdb101.rcsb.org/motm/jmol/?id=42 -->
+<html data-immersive-translate-page-theme="light" imt-state="dual" imt-translation-dir="ltr" imt-trans-position="after"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>绿色荧光蛋白 --- Green Fluorescent Protein</title>
+    <style>
+      body {
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-size: 14px;
+          margin:0;
+          color:#5a5a5a;
+          line-height: 1.42857;
+      }
+      #loading {
+          width: 500px;
+          height: 500px;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          line-height:500px;
+          text-align:center;
+          background-color:#222;
+          color: #fff;
+          z-index: 30000;
+      }
+      #divJsmol {
+          width: 500px;
+          height: 500px;
+      }
+      form {
+          margin-bottom:12px;
+      }
+    </style>
+    <script src="./JSmol.min.js.下载"></script>
+    <!-- CORS issues when placing jsmol library on cdn server-->
+    <!-- script(src="http://pdb101-dev.rcsb.org/pdb101/jsmol/JSmol.min.js")-->
+    <script>
+      var jmolApplet0;
+      var script = "set antialiasDisplay; background black; frank off; load FILES 'https://cdn.rcsb.org/pdb101/motm/42/42-Green_Fluorescent_Protein_GFP-JSmol-1ema.pdb' ; model *;select all;cartoon off;wireframe off;cpk off;backbone .4;color [140,140,239];select 64.C or 64.CA or 66.N1 or 68.CA or 68.N or 66.C3;wireframe .4;select 54-77;color [135,230,135];select cro;wireframe .4;color cpk;select cro and carbon;color white;select cro and nitrogen;color [140,140,239];select 217-219, 87-89, 152-154, 77-79;backbone 0;connect (77.CA) (79.CA) partial;connect (87.CA) (89.CA) partial;connect (152.CA) (154.CA) partial;connect (217.CA) (219.CA) partial;set partialDots;connect (77.CA) (79.CA) radius .3 partial;connect (87.CA) (89.CA) radius .3 partial;connect (152.CA) (154.CA) radius .3 partial;connect (217.CA) (219.CA) radius .3 partial;center cro;zoom 105;rotate z -123.6;rotate y 129.47;rotate z 74.07";
+      
+      // callback function called after jsmol has loaded or has finished executing script
+      jmol_isReady = function(applet) {
+          console.log("jmol_isReady: ok");
+          $('#loading').hide();
+          //if (hasPostScript) runPostScript();
+          Jmol.script(applet, 'select :s;color red', 'momJmol')
+      }
+      
+      // init jsmol
+      var Info = {
+          width: 500,
+          height: 500,
+          debug: false,
+          zIndexBase: 20000,
+          z: {monitorZIndex:100},
+          addSelectionOptions: false, // default is true
+          use: "HTML5",
+          j2sPath: "/js/jsmol/j2s",
+          // CORS issues when placing jsmol library on cdn server
+          //j2sPath: "http://pdb101-dev.rcsb.org/pdb101/jsmol/j2s",
+          // TODO You will need jsmol.php on your server and then point Info.serverURL to it
+          //      if you are going to read any binary files with Chrome.
+          disableJ2SLoadMonitor: true, // default is false
+          disableInitialConsole: true, // default is false
+          readyFunction: jmol_isReady,
+          allowjavascript: true,
+          script: script,
+      }
+    </script>
+  <style data-id="immersive-translate-input-injected-css"></style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-background-backgroundColor: #dbafaf;
+  --immersive-translate-theme-background-backgroundColor-rgb: 219, 175, 175;
+  --immersive-translate-theme-background-backgroundOpacity: 12;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+[imt-state="dual"] .immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+[imt-state="dual"] .immersive-translate-target-wrapper[dir="rtl"] {
+  text-align: right;
+}
+
+.immersive-translate-target-wrapper {
+  font-feature-settings: normal;
+}
+
+[imt-state="dual"]
+  .immersive-translate-pdf-target-container
+  .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+[imt-state="dual"]
+  .immersive-translate-pdf-target-container
+  .immersive-translate-target-wrapper
+  font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+[imt-state="translation"] .immersive-translate-target-wrapper > br {
+  display: none;
+}
+
+[imt-state="translation"]
+  .immersive-translate-target-translation-block-wrapper {
+  margin: 0 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+[imt-trans-position="before"]
+  .immersive-translate-target-translation-block-wrapper {
+  display: block;
+}
+
+[imt-trans-position="before"]
+  .immersive-translate-target-translation-block-wrapper {
+  margin-top: 0 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: inline-block;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-grey-inner,
+[imt-state="translation"] .immersive-translate-target-translation-theme-grey-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-grey {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid
+    var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeUnderline-inner,
+[imt-state="translation"]
+  .immersive-translate-target-translation-theme-nativeUnderline-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-nativeUnderline {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeUnderline-borderColor
+  ) !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-dashedBorder-borderRadius
+  ) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-dashedBorder-borderRadius
+  ) !important;
+  padding: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-solidBorder-borderRadius
+  ) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-solidBorder-borderRadius
+  ) !important;
+  padding: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeDashed-inner,
+[imt-state="translation"]
+  .immersive-translate-target-translation-theme-nativeDashed-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-nativeDashed {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeDashed-borderColor
+  ) !important;
+  text-decoration-style: dashed !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed
+    var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(
+    to right,
+    var(--immersive-translate-theme-dotted-borderColor) 30%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeDotted-inner,
+[imt-state="translation"]
+  .immersive-translate-target-translation-theme-nativeDotted-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-nativeDotted {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeDotted-borderColor
+  ) !important;
+  text-decoration-style: dotted !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-wavy-inner,
+[imt-state="translation"] .immersive-translate-target-translation-theme-wavy-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-wavy {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-wavy-borderColor
+  ) !important;
+  text-decoration-style: wavy !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(
+      to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%
+    )
+    repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed
+    var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed
+    var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-highlight-inner,
+[imt-state="translation"]
+  .immersive-translate-target-translation-theme-highlight-inner,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-highlight {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px
+      var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(
+    to right,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3)
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-weakening,
+[imt-state="translation"] .immersive-translate-target-translation-theme-weakening,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-italic,
+[imt-state="translation"] .immersive-translate-target-translation-theme-italic,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-bold,
+[imt-state="translation"] .immersive-translate-target-translation-theme-bold,
+[imt-state="translation"]
+  [data-imt-translation-only="1"].immersive-translate-target-inner.immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"]
+  .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"]
+  .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* opacity theme start */
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(
+    calc(var(--immersive-translate-theme-opacity-opacity) * 1%)
+  ) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"]
+  .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"]
+  .immersive-translate-target-inner,
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(
+    calc(var(--immersive-translate-theme-opacity-opacity) * 1%)
+  ) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"]
+  .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"]
+  .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* background theme start */
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-background {
+  margin: 8px 0;
+  background: rgba(
+    var(--immersive-translate-theme-background-backgroundColor-rgb),
+    calc(var(--immersive-translate-theme-background-backgroundOpacity) * 1%)
+  );
+  border-radius: 4px;
+  box-shadow: unset !important;
+  padding: 12px;
+  display: inline-block;
+}
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-background-inner {
+  background: rgba(
+    var(--immersive-translate-theme-background-backgroundColor-rgb),
+    calc(var(--immersive-translate-theme-background-backgroundOpacity) * 1%)
+  );
+  padding-left: 6px;
+  padding-right: 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper
+  .immersive-translate-target-translation-theme-background-inner {
+  background: unset;
+  padding-left: unset;
+  padding-right: unset;
+}
+/* background theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000c;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: inline-block;
+}
+
+.immersive-translate-tooltip:hover + .immersive-translate-tooltip-content {
+  display: inline-block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+.immersive-translate-tooltip:hover:before {
+  display: inline-block;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-image-status {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-2, #fff);
+  font-size: 14px;
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;display:block!important;}
+[dir='rtl'] .immersive-translate-target-wrapper:not([dir]) {text-align:left;direction:ltr;}
+[imt-translation-dir=rtl] [data-imt-translation-only] {text-align:right;}
+.immersive-translate-target-wrapper {word-break:break-word; user-select:text; font-feature-settings:normal;}
+[imt-state=dual] .immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {display:block;}
+[imt-trans-position=before] .immersive-translate-target-translation-block-wrapper {display:block!important;}
+[data-imt-clamp-unlocked] {scrollbar-width: none;-ms-overflow-style: none;}
+[data-imt-clamp-unlocked]::-webkit-scrollbar {display: none;}
+</style></head>
+  <body marginwidth="0" marginheight="0" style="">
+    <h3 data-imt-p="1">Green Fluorescent Protein<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" style=""><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">绿色荧光蛋白</font></font></font></h3>
+    <div id="divJsmol">
+      <script>jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);</script><div id="jmolApplet0_appletinfotablediv" style="width:500px;height:500px;position:relative;font-size:14px;text-align:left"> <img id="jmolApplet0_waitimage" src="./cursor_wait.gif" style="position: absolute; bottom: 10px; left: 10px; z-index: 20006; display: none;"><div id="jmolApplet0_appletdiv" style="z-index: 20001; width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; background-repeat: no-repeat; background-position: center center; display: block;"><canvas width="500" height="500" id="jmolApplet0_canvas2d" style="width: 100%; height: 100%; z-index: 20002; cursor: default;"></canvas></div><div id="jmolApplet0_2dappletdiv" style="position:absolute;width:100%;height:100%;overflow:hidden;display:none"></div><div id="jmolApplet0_infotablediv" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; display: none;"><div id="jmolApplet0_infoheaderdiv" style="height: 20px; width: 100%; background: yellow; display: none;"><span id="jmolApplet0_infoheaderspan">Jmol._Canvas2D (Jmol) "jmolApplet0"</span><span id="jmolApplet0_infocheckboxspan" style="position:absolute;text-align:right;right:1px;"><a href="javascript:Jmol.showInfo(jmolApplet0,false)">[x]</a></span></div><div id="jmolApplet0_infodiv" style="position:absolute;top:20px;bottom:0px;width:100%;height:100%;overflow:auto"><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/package.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/corejmol.z.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">JSmol exec jmolApplet0 start applet null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol JavaScript applet jmolApplet0__9574164884853127__ initializing</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue debug null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue logLevel null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue allowjavascript true</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">AppletRegistry.checkIn(jmolApplet0__9574164884853127__)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">vwrOptions: </span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">{ "name":"jmolApplet0","applet":true,"documentBase":"https://pdb101.rcsb.org/motm/jmol/?id=42","platform":"J.awtjs2d.Platform","allowjavascript":true,"fullName":"jmolApplet0__9574164884853127__","codePath":"https:/js/jsmol/j2s/","display":"jmolApplet0_canvas2d","signedApplet":"true","appletReadyCallback":"Jmol._readyCallback","statusListener":"[J.appletjs.Jmol object]","syncId":"9574164884853127","bgcolor":"#FFFFFF" }</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">setting document base to "https://pdb101.rcsb.org/motm/jmol/?id=42"</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Loading language resource https:/js/jsmol/idioma/zh_CN.po</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FileManager opening url https://pdb101.rcsb.org/js/jsmol/idioma/zh_CN.po</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">539 translations loaded</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Loading language resource https:/js/jsmol/idioma/zh_TW.po</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FileManager opening url https://pdb101.rcsb.org/js/jsmol/idioma/zh_TW.po</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">536 translations loaded</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">(C) 2015 Jmol Development</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol Version: 14.7.0_2016.06.27  2016-06-27 01:32</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">java.vendor: Java2Script (HTML5)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">java.version: 2016-05-08 13:20:27 (JSmol/j2s)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">os.name: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Access: ALL</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">memory: 0.0/0.0</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">processors available: 1</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">useCommandThread: false</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">appletId:jmolApplet0 (signed)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/corescript.z.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue emulate null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">defaults = "Jmol"</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue boxbgcolor null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue bgcolor #FFFFFF</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">backgroundColor = "#FFFFFF"</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue ANIMFRAMECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue APPLETREADYCallback Jmol._readyCallback</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">APPLETREADYCallback = "Jmol._readyCallback"</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">callback set for APPLETREADYCallback Jmol._readyCallback APPLETREADY</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue ATOMMOVEDCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue CLICKCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue DRAGDROPCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue ECHOCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue ERRORCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue EVALCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue HOVERCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue IMAGECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue LOADSTRUCTCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue MEASURECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue MESSAGECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue MINIMIZATIONCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue SERVICECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue PICKCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue RESIZECallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue SCRIPTCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue SYNCCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue STRUCTUREMODIFIEDCallback null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue doTranslate null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">language=zh_CN</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue popupMenu null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue script null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue loadInline null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol getValue load null</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol applet jmolApplet0__9574164884853127__ ready</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/BioResolver.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/AlphaMonomer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/Monomer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/ProteinStructure.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/Helix.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/Sheet.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/AminoPolymer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/AlphaPolymer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/BioPolymer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/Turn.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/JM/AminoMonomer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/corebio.z.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">script 1 started</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">antialiasDisplay = true</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FileManager.getAtomSetCollectionFromFile(https://cdn.rcsb.org/pdb101/motm/42/42-Green_Fluorescent_Protein_GFP-JSmol-1ema.pdb)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FileManager opening url https://cdn.rcsb.org/pdb101/motm/42/42-Green_Fluorescent_Protein_GFP-JSmol-1ema.pdb</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">The Resolver thinks Pdb</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FLUORESCENT PROTEIN                     01-AUG-96   1EMA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">GREEN FLUORESCENT PROTEIN FROM AEQUOREA VICTORIA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">found biomolecule 1: A</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">biomolecule 1: number of transforms: 1</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Setting space group name to P 21 21 21</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">1EMA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Time for openFile(https://cdn.rcsb.org/pdb101/motm/42/42-Green_Fluorescent_Protein_GFP-JSmol-1ema.pdb): 1554 ms</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">reading 1866 atoms</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">ModelSet: haveSymmetry:false haveUnitcells:false haveFractionalCoord:false</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">1 model in this collection. Use getProperty "modelInfo" or getProperty "auxiliaryInfo" to inspect them.</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Default Van der Waals type for model set to Jmol</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">1866 atoms created</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">ModelSet: autobonding; use  autobond=false  to not generate bonds automatically</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Time for creating model: 206 ms</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">FLUORESCENT PROTEIN                     01-AUG-96   1EMA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">GREEN FLUORESCENT PROTEIN FROM AEQUOREA VICTORIA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">found biomolecule 1: A</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">1EMA</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1866 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">6 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">198 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">22 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">15 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">3 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">93 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/corescriptcmd.z.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1 个新化学键; 0 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1 个新化学键; 0 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1 个新化学键; 0 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1 个新化学键; 0 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">partialDots = true</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">0 个新化学键; 1 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">0 个新化学键; 1 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">0 个新化学键; 1 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">0 个新化学键; 1 个己修改</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Script completed</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol script terminated</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">script 2 started</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">0 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Script completed</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol script terminated</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/J/g3d/HermiteRenderer.js</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">script 3 started</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;">1834 个原子己选定</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Script completed</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">Jmol script terminated</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">setStatusAtomPicked(441,[THR]62:A.CA #442 26.178 31.421 37.808)</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">[THR]62:A.CA #442 26.178 31.421 37.808</span></div><div style="white-space: nowrap;"><span style="white-space: nowrap;" data-imt-p="1">loadScript /js/jsmol/j2s/core/coretext.z.js</span></div></div></div></div>
+    </div>
+    <div id="loading" style="top: 56.1484px; left: 0px; display: none;">loading...</div>
+    <p data-imt-p="1">The chromophore is shown in atomic colors. Use the buttons to change the view for a close-up on the chromophore. <font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" style=""><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">发色团以原子颜色显示。使用按钮切换视图，以便对发色团进行放大。</font></font></font><br></p><form name="jmolOptions2" data-imt-p="1"> <input type="radio" name="mol2" onclick="Jmol.script(jmolApplet0, &#39;select all and not (218,88,153,78);backbone .4;zoom 105&#39;, &#39;momJmol&#39;)" checked=""> show entire protein<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" style=""><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">显示整个蛋白质</font></font></font><br> <input type="radio" name="mol2" onclick="Jmol.script(jmolApplet0, &#39;select all and not (218,88,153,78);backbone .1;zoom 400&#39;, &#39;momJmol&#39;)"> close-up on chromophore<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" style=""><font class="notranslate" data-immersive-translate-translation-element-mark="1">&nbsp;&nbsp;</font><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-inline-wrapper-theme-none immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">聚焦于发色团</font></font></font><br> </form> <br><br><i data-imt-p="1">JSmol designed by Belle Lin<font class="notranslate immersive-translate-target-wrapper" lang="zh-CN" style=""><br><font class="notranslate immersive-translate-target-translation-theme-none immersive-translate-target-translation-block-wrapper-theme-none immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-none-inner" data-immersive-translate-translation-element-mark="1">由 Belle Lin 设计的 JSmol</font></font></font></i><p></p>
+  
+
+<script>
+  // position the loading div
+  var offset = $("#divJsmol").offset();
+  var y = offset.top;
+  console.log("top=" + y);
+  $("#loading").css({top: y});
+  var x = offset.left;
+  console.log("left=" + x);
+  $("#loading").css({left: x});
+</script></body></html>
