@@ -6,7 +6,7 @@
 *credentials*
 *token*
 
-# === Claude 本地配置（含环境变量路径等信息） ===
+# === Claude 本地配置 ===
 .claude/settings.local.json
 
 # === Python ===
@@ -25,6 +25,7 @@ node_modules/
 
 # === 缓存 & 模型文件（体积大，不适合 Git） ===
 cache/
+output/
 
 # === 系统和 IDE ===
 .DS_Store
@@ -42,7 +43,26 @@ Thumbs.db
 *.h5
 *.arrow
 *.node
+*.tar.gz
 
-# === 过程文件中可能含敏感数据的文件 ===
-_过程文件/*.json
-_过程文件/SC2025/
+# === 过程文件 ===
+_过程文件/
+
+# === 下载的网页镜像 ===
+网站/
+
+# === Word 临时文件 ===
+~$*.docx
+~$*.doc
+
+# === 参考文献 PDF（版权文件，不上传） ===
+参考文献/
+
+# === 训练数据（来自外部源，README 中提供下载链接） ===
+训练数据/
+
+# === 竞赛官方 PDF（版权文件） ===
+2026Protein Design/*.pdf
+
+# === 生成图片（非必要） ===
+images/

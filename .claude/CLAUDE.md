@@ -1,5 +1,42 @@
 # 2026合成生物学创新赛 — 蛋白质设计赛道
 
+## 🧠 项目记忆系统
+
+- **PROJECT_STATUS.md**：项目全景与进度追踪文件（数据清单、代码资产、环境状态、进度、下一步）。
+  **每次启动本项目时先读取 `PROJECT_STATUS.md`** 以快速恢复上下文，避免重复扫描全项目。
+- **自动更新**：每次完成实质性工作（代码编写、数据处理、模型训练、文档生成）后，
+  **必须更新 `PROJECT_STATUS.md`** 的"进度更新"部分和"更新日志"。
+- **关键文件**：管线蓝图 = `文档/GFP蛋白质设计_管线设计与实施方案_v3.0.docx`（五策略+DBLT+18天时间线）。
+
+## 🔄 会话结束仪式（每次会话结束前必须执行）
+
+**每次会话结束前，按以下顺序执行：**
+
+1. **更新 PROJECT_STATUS.md**：更新"进度更新"部分和"更新日志"，记录本次会话完成的工作
+2. **更新 SESSION_LOG.md**：追加一条会话记录（日期、摘要、关键产出）
+3. **Git 提交**：
+   ```bash
+   git add -A
+   git commit -m "<日期> <简短摘要>"
+   git push origin master
+   ```
+   - 提交信息格式：`2026-06-10 数据修复+环境配置+GitHub上传规划`
+   - **注意**：`.gitignore` 已排除 `cache/`、`_过程文件/`、`训练数据/`、`参考文献/`、`网站/` 等
+4. **更新记忆文件**：如有新的关键信息，更新 `memory/` 下的持久记忆文件
+
+**提交内容白名单**（确认这些类型的文件已被 git 追踪）：
+- `代码/*.py` — 所有 Python 脚本
+- `文档/**/*.docx` — 设计文档（非临时文件）
+- `文档/**/*.md` — Markdown 文档
+- `PROJECT_STATUS.md`, `SESSION_LOG.md`, `README.md`
+- `.gitignore`, `requirements.txt`, `setup.ps1`
+- `data/*.csv` — 核心数据（排除名单等）
+- `data/*.pdb` — 结构文件
+- `.claude/CLAUDE.md` — 项目指令
+- `2026Protein Design/*.csv` — 竞赛官方排除名单
+- `2026Protein Design/*.ipynb` — 官方教程 Notebook
+- `2026Protein Design/*.txt` — 参考序列
+
 ## Python 环境
 
 - **包管理器**: Anaconda 2025.12-2（`D:\Anaconda`）
@@ -12,7 +49,9 @@
 
 | 缓存类型 | 路径 | 大小 |
 |----------|------|------|
-| ESM 模型 (torch hub) | `cache/torch/hub/checkpoints/` | ~128 MB |
+| ESM-2 35M (torch hub) | `cache/torch/hub/checkpoints/esm2_t12_35M_UR50D.pt` | ~134 MB |
+| ESM-2 150M (torch hub) | `cache/torch/hub/checkpoints/esm2_t30_150M_UR50D.pt` | ~593 MB |
+| ESM-2 650M | ❌ 未下载 | ~2.5 GB |
 | HuggingFace 模型 | `cache/huggingface/` | (按需) |
 | pip 缓存 | `cache/pip/` | (按需) |
 
@@ -84,11 +123,17 @@ D:\蛋白质设计-合成生物学创新赛-Claude\
 
 | 文件 | 说明 |
 |------|------|
-| `代码/gfp_design.py` | 主线 Pipeline（ESM 嵌入 + 随机森林） |
-| `代码/generate_report.py` | 文献调研报告生成脚本 |
-| `sfGFP_氨基酸功能全注释.docx` | 238 个氨基酸逐位功能注释 |
-| `sfGFP_禁止突变位点.csv` | 位点约束分类（绝对禁止/严重受限/可突变） |
-| `data/GFP_training_data.csv` | 训练数据（GFP 突变体亮度） |
-| `data/GFP data.xlsx` | 完整训练数据（多 sheet） |
-| `data/Exclusion_List.csv` | 禁止提交序列黑名单 |
+| **`PROJECT_STATUS.md`** | ★ 项目全景与进度（数据/代码/环境/下一步），每次启动必读 |
+| `文档/GFP蛋白质设计_管线设计与实施方案_v3.0.docx` | ★ 管线蓝图（五策略+DBLT+Agent+18天时间线） |
+| `文档/GFP蛋白质设计_零基础实操指南.docx` | 名词解释+代码示例（培训用） |
+| `代码/gfp_design.py` | v1 原型 Pipeline（ESM-2 35M + RF），**非v3.0版本** |
+| `训练数据/已整合/integrated_csv/03_genotype_brightness_sarkisyan.csv` | Sarkisyan 2016 全量数据（54,026条） |
+| `训练数据/已整合/integrated_csv/02_brightness_full.csv` | 亮度训练全集（141,572条） |
+| `data/GFP data.xlsx` | 官方训练数据（500条）+ 往年Top20 |
+| `data/comprehensive_GFP_dataset.xlsx` | 综合数据集（7 sheets，含45候选位点） |
+| `data/FPbase GFP 光谱.csv` | GFP变体光谱性质（~1,110条） |
+| `data/fireprotdb_20251015-164116.csv` | FireProtDB 热稳定性ΔΔG |
+| `data/Exclusion_List.csv` | 禁止提交序列黑名单（50条） |
+| `data/2B3P_sfGFP.pdb` | sfGFP 晶体结构 |
+| `data/sfGFP_禁止突变位点.csv` | 位点约束分类（⚠️ 格式损坏需修复） |
 | `2026Protein Design/2026Protein Design in Synbio challenges.pdf` | 竞赛官方说明 |
