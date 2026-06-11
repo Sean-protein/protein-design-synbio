@@ -27,6 +27,11 @@ node_modules/
 cache/
 output/
 
+# === FoldX 工作目录（临时文件） ===
+foldx_work/
+foldx_work_v*/
+foldx_work_v*/
+
 # === 系统和 IDE ===
 .DS_Store
 Thumbs.db
