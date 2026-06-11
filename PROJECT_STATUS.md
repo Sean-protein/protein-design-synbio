@@ -2,7 +2,7 @@
 
 > **自动读取**：每次启动本项目时读取此文件以恢复上下文。
 > **自动更新**：每次完成实质性工作后更新"进度更新"部分和"更新日志"。
-> **最后更新**：2026-06-10
+> **最后更新**：2026-06-11
 
 ---
 
@@ -148,44 +148,47 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 
 ## 七、当前进度（对照 v3.0 时间线）
 
-### 已完成 ✅
+> v3.0 规划：Day 1-2 (6/10-11) 环境搭建+模型下载+策略A枚举。今天是 **6月11日，Day 2**。
+
+### 已完成 ✅ (Day 1-2)
 - [x] 文献调研与报告（~57篇参考文献）
 - [x] 评委视角审阅报告（→ v3.0 改进依据）
 - [x] v3.0 管线设计文档
 - [x] 三级约束体系定义
 - [x] 数据收集整合（Sarkisyan 54K + FPbase + FireProtDB）
-- [x] 基础环境（Python + 核心库）
-- [x] ESM-2 35M + 150M 模型下载
-
-### 进行中 🟡
-- [ ] **GPU 资源解决**（最大阻塞项）
-- [ ] 缺失包安装（xgboost/lightgbm/gpytorch/botorch/peft）
+- [x] 基础环境（Python + 核心库 + conda env `gfp_design`）
+- [x] ESM-2 35M + 150M + **650M** 模型下载 (2.6GB)
+- [x] **数据修复**：删除损坏 `nature2016_gfp_fitness.tsv`；修复 `sfGFP_禁止突变位点.csv`（228行）
+- [x] **包安装**：xgboost, lightgbm, gpytorch, botorch, peft
+- [x] **GPU确认**：本地RTX 3090 24GB + 实验室L40 48GB×2
+- [x] **GitHub仓库**：`Sean-protein/protein-design-synbio`
+- [x] **项目记忆系统**：PROJECT_STATUS.md + SESSION_LOG.md + memory文件
+- [x] **策略A枚举**：`代码/strategy_A_enum.py`，3,499条候选
+- [x] **FoldX5.1 配置+筛选**：发现+修正 `individual_list.txt` 格式bug，3,030条有效 → **2,424条通过** (ddG<3.0, 80%)
 
 ### 待启动 🔴
-- [ ] 修复损坏数据文件
-- [ ] ESM-2 650M 下载
-- [ ] 策略A：理性枚举脚本
-- [ ] 策略D：MSA构建（jackhmmer）
-- [ ] 策略B：ESM-2嵌入 + ML训练
-- [ ] SaProt 下载 + 嵌入
-- [ ] ESM3 HuggingFace许可 + 下载
+- [ ] 策略D：MSA构建（jackhmmer + UniRef30）
+- [ ] 策略B：ESM-2 650M嵌入 + ML集成训练
 - [ ] 策略C：ProteinMPNN
 - [ ] 策略E：ESM3 Gibbs生成
-- [ ] 五级漏斗筛选
-- [ ] DBLT迭代闭环
-- [ ] Agent编排
-- [ ] 提交材料准备
+- [ ] SaProt + ESM3 模型下载
+- [ ] 五级漏斗筛选（Phase 3-5）
+- [ ] DBLT迭代闭环 + Agent编排
+- [ ] MD 72°C热稳定性验证
 
 ---
 
-## 八、立即下一步
+## 八、立即下一步（Day 2 优先级）
 
-1. **解决GPU** — AutoDL A100 或确认本地GPU
-2. `pip install xgboost lightgbm gpytorch botorch peft`
-3. 修复 `data/sfGFP_禁止突变位点.csv` 格式
-4. 删除损坏的 `data/nature2016_gfp_fitness.tsv`
-5. 下载 ESM-2 650M 模型
-6. 编写策略A枚举脚本（无GPU可立即跑）
+### 今天可做（本地无GPU也能先跑）
+1. **下载 ESM-2 650M 模型** — `python -c "import esm; esm.pretrained.load_model_and_alphabet('esm2_t33_650M_UR50D')"`（后台跑，~2.5GB）
+2. **策略A脚本** — 编写理性枚举脚本（45位点→2-3突变组合→FoldX筛选），**无GPU可立即产出~2-3K候选**
+3. **策略D启动** — `jackhmmer` MSA搜索（如有UniRef30）
+
+### 需要GPU时优先做
+4. 策略B：ESM-2 650M 嵌入生成（~10K条，RTX 3090约8h）
+5. SaProt 下载 + 嵌入
+6. ESM3 HuggingFace 许可 + 下载（→ LoRA微调 + 策略E生成）
 
 ---
 
@@ -195,3 +198,5 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 |------|----------|
 | 2026-06-10 | 初始创建：全项目扫描，建立数据/代码/环境/进度基线 |
 | 2026-06-10 | **修复**：删除损坏的 `nature2016_gfp_fitness.tsv`；修复 `sfGFP_禁止突变位点.csv`（14行字段异常→全部8字段）；安装 xgboost/lightgbm/gpytorch/botorch/peft；确认硬件 RTX3090笔记本+L40服务器 |
+| 2026-06-10 | **GitHub上传规划**：更新 .gitignore（排除cache/过程文件/训练数据/参考文献/网站）；创建 README.md；创建 SESSION_LOG.md；建立会话结束仪式；更新远程仓库 `Sean-protein/protein-design-synbio`；清理119个大文件从Git追踪 |
+| 2026-06-11 | **策略A完成**：编写 `strategy_A_enum.py`（三级约束+45候选位点枚举→3,499条）；下载 ESM-2 650M (2.6GB)；配置 FoldX5.1；发现并修正 `individual_list.txt` 多突变格式bug（须同行逗号分隔）；8线程并行 FoldX 批处理完成（~7小时）；**2,424条通过 ddG<3.0 筛选（80%）**；创建 `foldx_runner.py`（增量保存+断点续跑）和 `run_foldx_batch.py` |

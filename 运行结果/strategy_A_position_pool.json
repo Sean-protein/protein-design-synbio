@@ -1,0 +1,2701 @@
+{
+  "1": {
+    "wt": "M",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "2": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "3": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "4": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "5": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "6": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "7": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "8": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "9": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "10": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "beta_core",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "11": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "12": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "13": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "14": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "15": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "16": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "17": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "beta_core",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "18": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "19": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "20": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "21": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "22": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "23": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "24": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "25": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "26": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "27": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "28": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "29": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "30": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "beta_core",
+    "allowed": [
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "31": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "32": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "33": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "34": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "35": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "36": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "37": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "38": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "39": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "beta_core",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "40": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "41": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "42": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "43": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "未注释",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "44": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "45": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "46": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "47": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "48": {
+    "wt": "C",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "49": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "50": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "51": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "52": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "53": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "54": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "55": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "56": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "57": {
+    "wt": "W",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "F",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "58": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "59": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "60": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "61": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "62": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "63": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "64": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "重要功能(关键改造位点)",
+    "region": "chromophore",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "65": {
+    "wt": "T",
+    "v3_level": 1,
+    "conservation": "可突变但受限于小残基",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "66": {
+    "wt": "Y",
+    "v3_level": 1,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "67": {
+    "wt": "G",
+    "v3_level": 1,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "68": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "chromophore",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "69": {
+    "wt": "Q",
+    "v3_level": 2,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [
+      "N",
+      "E"
+    ],
+    "is_designable": true
+  },
+  "70": {
+    "wt": "C",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "71": {
+    "wt": "F",
+    "v3_level": 1,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "72": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "chromophore",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "73": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "H",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "74": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "75": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "76": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "77": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "78": {
+    "wt": "M",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "79": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "80": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "surface",
+    "allowed": [
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "81": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "82": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "83": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "84": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "85": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "86": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "87": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "88": {
+    "wt": "M",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "89": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "90": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "91": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "92": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "93": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "94": {
+    "wt": "Q",
+    "v3_level": 2,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [
+      "N",
+      "E",
+      "D"
+    ],
+    "is_designable": true
+  },
+  "95": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "96": {
+    "wt": "R",
+    "v3_level": 1,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "97": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "98": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "99": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "100": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "101": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "A",
+      "E",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "102": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "103": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "104": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "105": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "beta_core",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "106": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "107": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "108": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "109": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "K",
+      "Q",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "110": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "111": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变区域)",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "112": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "113": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "114": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "115": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "116": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "117": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "118": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "119": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "120": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "121": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "122": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "beta_core",
+    "allowed": [
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "123": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "124": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "125": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "126": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "127": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "128": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "129": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "130": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "131": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "132": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "133": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "134": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "135": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "136": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "137": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "138": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "139": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "140": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "141": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "142": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "143": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "144": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "145": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "146": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "147": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "148": {
+    "wt": "H",
+    "v3_level": 2,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "149": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "150": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "151": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "152": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "153": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "154": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "155": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "156": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "157": {
+    "wt": "Q",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "K",
+      "N"
+    ],
+    "is_designable": true
+  },
+  "158": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "159": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "160": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "161": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "162": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "163": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "164": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "165": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "166": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "167": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "L",
+      "M",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "168": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "169": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "170": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "171": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "hydrophobic_core",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "172": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "173": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "174": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "175": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "A",
+      "G",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "176": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "177": {
+    "wt": "Q",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "K",
+      "N"
+    ],
+    "is_designable": true
+  },
+  "178": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "179": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "180": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "181": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "182": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "183": {
+    "wt": "Q",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "K",
+      "N"
+    ],
+    "is_designable": true
+  },
+  "184": {
+    "wt": "Q",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "K",
+      "N"
+    ],
+    "is_designable": true
+  },
+  "185": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "186": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "187": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [],
+    "is_designable": false
+  },
+  "188": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "189": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "190": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "191": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "192": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "193": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "194": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "195": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "196": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "197": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "198": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "199": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "200": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "201": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "202": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "203": {
+    "wt": "T",
+    "v3_level": 2,
+    "conservation": "绝对禁止(绿色荧光)",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "204": {
+    "wt": "Q",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "K",
+      "N"
+    ],
+    "is_designable": true
+  },
+  "205": {
+    "wt": "S",
+    "v3_level": 2,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "206": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "重要功能(sfGFP关键突变)",
+    "region": "c_terminal",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "207": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "208": {
+    "wt": "S",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "209": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "210": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "211": {
+    "wt": "P",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [],
+    "is_designable": false
+  },
+  "212": {
+    "wt": "N",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "H",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "213": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "214": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  },
+  "215": {
+    "wt": "R",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "216": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "217": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "N",
+      "Q",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "218": {
+    "wt": "M",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "219": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "220": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "221": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "surface",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "222": {
+    "wt": "E",
+    "v3_level": 1,
+    "conservation": "绝对禁止",
+    "region": "chromophore",
+    "allowed": [],
+    "is_designable": false
+  },
+  "223": {
+    "wt": "F",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "L",
+      "W",
+      "Y"
+    ],
+    "is_designable": true
+  },
+  "224": {
+    "wt": "V",
+    "v3_level": 3,
+    "conservation": "严重受限",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "M"
+    ],
+    "is_designable": true
+  },
+  "225": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "226": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "227": {
+    "wt": "A",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "G",
+      "S",
+      "T"
+    ],
+    "is_designable": true
+  },
+  "228": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "绝对禁止",
+    "region": "other",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "229": {
+    "wt": "I",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "L",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "230": {
+    "wt": "T",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "A",
+      "S"
+    ],
+    "is_designable": true
+  },
+  "231": {
+    "wt": "H",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "F",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "232": {
+    "wt": "G",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "A"
+    ],
+    "is_designable": true
+  },
+  "233": {
+    "wt": "M",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "I",
+      "L",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "234": {
+    "wt": "D",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "E",
+      "N",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "235": {
+    "wt": "E",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "D",
+      "K",
+      "Q"
+    ],
+    "is_designable": true
+  },
+  "236": {
+    "wt": "L",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "surface",
+    "allowed": [
+      "I",
+      "M",
+      "V"
+    ],
+    "is_designable": true
+  },
+  "237": {
+    "wt": "Y",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "F",
+      "H",
+      "W"
+    ],
+    "is_designable": true
+  },
+  "238": {
+    "wt": "K",
+    "v3_level": 3,
+    "conservation": "重要功能",
+    "region": "other",
+    "allowed": [
+      "E",
+      "Q",
+      "R"
+    ],
+    "is_designable": true
+  }
+}
