@@ -2,7 +2,7 @@
 
 > **自动读取**：每次启动本项目时读取此文件以恢复上下文。
 > **自动更新**：每次完成实质性工作后更新"进度更新"部分和"更新日志"。
-> **最后更新**：2026-06-11
+> **最后更新**：2026-06-13
 
 ---
 
@@ -27,7 +27,7 @@
 | **管线 v3.0**（权威） | `文档/GFP蛋白质设计_管线设计与实施方案_v3.0.docx` | 五策略+DBLT+Agent+18天时间线 |
 | 竞赛官方规则 | `2026Protein Design/2026Protein Design in Synbio challenges.pdf` | 提交格式、评分规则 |
 | 零基础实操指南 | `文档/GFP蛋白质设计_零基础实操指南.docx` | 名词解释+代码示例 |
-| v2.1 评委审阅 | `文档/运行结果/v2.1_评委视角审阅报告.md` | v3.0 改进依据 |
+| v2.1 审阅 | 已移除（仓库精简中排除） | v3.0 改进依据（历史记录） |
 | 氨基酸注释 | `文档/From Claude/sfGFP_氨基酸功能全注释.docx` | 238位逐位约束参考 |
 
 ---
@@ -200,3 +200,4 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 | 2026-06-10 | **修复**：删除损坏的 `nature2016_gfp_fitness.tsv`；修复 `sfGFP_禁止突变位点.csv`（14行字段异常→全部8字段）；安装 xgboost/lightgbm/gpytorch/botorch/peft；确认硬件 RTX3090笔记本+L40服务器 |
 | 2026-06-10 | **GitHub上传规划**：更新 .gitignore（排除cache/过程文件/训练数据/参考文献/网站）；创建 README.md；创建 SESSION_LOG.md；建立会话结束仪式；更新远程仓库 `Sean-protein/protein-design-synbio`；清理119个大文件从Git追踪 |
 | 2026-06-11 | **策略A完成**：编写 `strategy_A_enum.py`（三级约束+45候选位点枚举→3,499条）；下载 ESM-2 650M (2.6GB)；配置 FoldX5.1；发现并修正 `individual_list.txt` 多突变格式bug（须同行逗号分隔）；8线程并行 FoldX 批处理完成（~7小时）；**2,424条通过 ddG<3.0 筛选（80%）**；创建 `foldx_runner.py`（增量保存+断点续跑）和 `run_foldx_batch.py` |
+| 2026-06-13 | **GitHub仓库精简**：修订 .gitignore（新增 Tools/, molecules/, rotabase.txt, GFP_tutorial.pdf, 策略A FoldX中间PDB, 文档子目录等排除规则）；移除 2026Protein Design/*.pdf 规则以保留竞赛材料；使用 `git update-index --force-remove` 管道高效移除152K中间PDB文件；**从 179,723 文件→60 文件**，仓库从 ~37GB+ 降至 <50MB；本地文件完整保留 |
