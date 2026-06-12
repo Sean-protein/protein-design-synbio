@@ -24,11 +24,10 @@
 
 | 文档 | 路径 | 用途 |
 |------|------|------|
-| **管线 v3.0**（权威） | `文档/GFP蛋白质设计_管线设计与实施方案_v3.0.docx` | 五策略+DBLT+Agent+18天时间线 |
-| 竞赛官方规则 | `2026Protein Design/2026Protein Design in Synbio challenges.pdf` | 提交格式、评分规则 |
-| 零基础实操指南 | `文档/GFP蛋白质设计_零基础实操指南.docx` | 名词解释+代码示例 |
+| **管线 v3.0**（权威） | `docs/GFP_pipeline_design_v3.0.docx` | 五策略+DBLT+Agent+18天时间线 |
+| 竞赛官方规则 | `competition/2026Protein Design in Synbio challenges.pdf` | 提交格式、评分规则 |
+| 零基础实操指南 | `docs/GFP_beginners_guide.docx` | 名词解释+代码示例 |
 | v2.1 审阅 | 已移除（仓库精简中排除） | v3.0 改进依据（历史记录） |
-| 氨基酸注释 | `文档/From Claude/sfGFP_氨基酸功能全注释.docx` | 238位逐位约束参考 |
 
 ---
 
@@ -77,17 +76,17 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 ### 核心数据（已就绪）
 | 文件 | 路径 | 条数 |
 |------|------|------|
-| 官方训练数据 | `data/GFP data.xlsx` (sheet: brightness) | 500 |
+| 官方训练数据 | `data/GFP_data.xlsx` (sheet: brightness) | 500 |
 | Sarkisyan 2016 全量 | `训练数据/已整合/integrated_csv/03_genotype_brightness_sarkisyan.csv` | **54,026** |
 | 亮度训练全集 | `训练数据/已整合/integrated_csv/02_brightness_full.csv` | 141,572 |
-| FPbase GFP光谱 | `data/FPbase GFP 光谱.csv` | ~1,110 |
+| FPbase GFP光谱 | `data/FPbase_GFP_spectra.csv` | ~1,110 |
 | FireProtDB ΔΔG | `data/fireprotdb_20251015-164116.csv` | ~58 (GFP) |
 | 综合GFP数据集 | `data/comprehensive_GFP_dataset.xlsx` | 7 sheets |
 | 45候选位点 | 同上，sheet "Candidate_Positions" | 45 |
 | Exclusion List | `data/Exclusion_List.csv` | 50 |
 | sfGFP PDB | `data/2B3P_sfGFP.pdb` | — |
-| 5条参考序列 | `data/WildType AAseqs of 4 GFP proteins.txt` | 5 |
-| 往年Top20 | `data/GFP data.xlsx` (sheet: beforetop10) | 20 |
+| 5条参考序列 | `data/WT_AAseqs_4_GFP.txt` | 5 |
+| 往年Top20 | `data/GFP_data.xlsx` (sheet: beforetop10) | 20 |
 
 ### 数据问题
 | 问题 | 文件 | 状态 |
@@ -104,10 +103,10 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 ### 已有（文献调研阶段）
 | 文件 | 用途 |
 |------|------|
-| `代码/gfp_design.py` | v1原型（ESM-2 35M+RF，avGFP骨架，仅亮度） |
-| `代码/integrate_data.py` | 数据整合脚本 |
-| `代码/build_comprehensive_dataset.py` | 综合数据集构建 |
-| `代码/generate_report.py` 系列 | 文献调研报告生成 |
+| `code/gfp_design.py` | v1原型（ESM-2 35M+RF，avGFP骨架，仅亮度） |
+| `code/integrate_data.py` | 数据整合脚本 |
+| `code/build_comprehensive_dataset.py` | 综合数据集构建 |
+| `code/generate_report.py` 系列 | 文献调研报告生成 |
 
 ### 缺失（v3.0 管线全部待开发）
 策略A枚举、策略B ML集成、策略C ProteinMPNN、策略D MSA/EVcouplings、策略E ESM3 Gibbs、五级漏斗、DBLT迭代、Agent编排 — **全部待写**。
@@ -163,7 +162,7 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 - [x] **GPU确认**：本地RTX 3090 24GB + 实验室L40 48GB×2
 - [x] **GitHub仓库**：`Sean-protein/protein-design-synbio`
 - [x] **项目记忆系统**：PROJECT_STATUS.md + SESSION_LOG.md + memory文件
-- [x] **策略A枚举**：`代码/strategy_A_enum.py`，3,499条候选
+- [x] **策略A枚举**：`code/strategy_A_enum.py`，3,499条候选
 - [x] **FoldX5.1 配置+筛选**：发现+修正 `individual_list.txt` 格式bug，3,030条有效 → **2,424条通过** (ddG<3.0, 80%)
 
 ### 待启动 🔴
@@ -196,8 +195,8 @@ GP(Matern 5/2核, 50维PCA) + MCMC采样 + EI采集 → MD金标准反馈 → 2-
 
 | 日期 | 更新内容 |
 |------|----------|
-| 2026-06-10 | 初始创建：全项目扫描，建立数据/代码/环境/进度基线 |
+| 2026-06-10 | 初始创建：全项目扫描，建立数据/code/环境/进度基线 |
 | 2026-06-10 | **修复**：删除损坏的 `nature2016_gfp_fitness.tsv`；修复 `sfGFP_禁止突变位点.csv`（14行字段异常→全部8字段）；安装 xgboost/lightgbm/gpytorch/botorch/peft；确认硬件 RTX3090笔记本+L40服务器 |
 | 2026-06-10 | **GitHub上传规划**：更新 .gitignore（排除cache/过程文件/训练数据/参考文献/网站）；创建 README.md；创建 SESSION_LOG.md；建立会话结束仪式；更新远程仓库 `Sean-protein/protein-design-synbio`；清理119个大文件从Git追踪 |
 | 2026-06-11 | **策略A完成**：编写 `strategy_A_enum.py`（三级约束+45候选位点枚举→3,499条）；下载 ESM-2 650M (2.6GB)；配置 FoldX5.1；发现并修正 `individual_list.txt` 多突变格式bug（须同行逗号分隔）；8线程并行 FoldX 批处理完成（~7小时）；**2,424条通过 ddG<3.0 筛选（80%）**；创建 `foldx_runner.py`（增量保存+断点续跑）和 `run_foldx_batch.py` |
-| 2026-06-13 | **GitHub仓库精简**：修订 .gitignore（新增 Tools/, molecules/, rotabase.txt, GFP_tutorial.pdf, 策略A FoldX中间PDB, 文档子目录等排除规则）；移除 2026Protein Design/*.pdf 规则以保留竞赛材料；使用 `git update-index --force-remove` 管道高效移除152K中间PDB文件；**从 179,723 文件→60 文件**，仓库从 ~37GB+ 降至 <50MB；本地文件完整保留 |
+| 2026-06-13 | **GitHub仓库精简**：修订 .gitignore（新增 Tools/, molecules/, rotabase.txt, GFP_tutorial.pdf, 策略A FoldX中间PDB, 文档子目录等排除规则）；移除 competition/*.pdf 规则以保留竞赛材料；使用 `git update-index --force-remove` 管道高效移除152K中间PDB文件；**从 179,723 文件→60 文件**，仓库从 ~37GB+ 降至 <50MB；本地文件完整保留 |

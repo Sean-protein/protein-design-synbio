@@ -7,7 +7,10 @@
 *token*
 
 # === Claude 本地配置 ===
-.claude/settings.local.json
+.claude/
+
+# === .claude 排除例外（如需保留某些 claude 配置） ===
+# （当前项目不追踪任何 .claude 文件）
 
 # === Python ===
 __pycache__/
@@ -79,11 +82,23 @@ GFP_tutorial.pdf
 氨基酸结构.png
 
 # === FoldX 中间输出（PDB 枚举文件） ===
-运行结果/strategy_A_foldx_input/
+results/strategy_A_foldx_input/
+
+# === 策略A输出结果（非版本追踪文件） ===
+results/
 
 # === 文档子目录（非最终产出） ===
-文档/From Claude/
-文档/From Doubao-尚未校验正确性-不可用/
-文档/_过程文件/
-文档/运行结果/
-文档/.claude/
+docs/From Claude/
+docs/From Doubao-*/
+docs/运行结果/
+docs/.claude/
+
+# === 报告生成脚本（非核心管线） ===
+code/assemble_*
+code/gen_*
+code/generate_*
+code/make_report.py
+code/run_report.py
+
+# === 损坏/待修复数据 ===
+data/sfGFP_*
