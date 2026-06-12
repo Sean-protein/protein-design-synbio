@@ -66,8 +66,24 @@ _过程文件/
 # === 训练数据（来自外部源，README 中提供下载链接） ===
 训练数据/
 
-# === 竞赛官方 PDF（版权文件） ===
-2026Protein Design/*.pdf
-
 # === 生成图片（非必要） ===
 images/
+
+# === FoldX 工具文件 ===
+Tools/
+molecules/
+rotabase.txt
+
+# === 根目录杂项（非项目产出） ===
+GFP_tutorial.pdf
+氨基酸结构.png
+
+# === FoldX 中间输出（PDB 枚举文件） ===
+运行结果/strategy_A_foldx_input/
+
+# === 文档子目录（非最终产出） ===
+文档/From Claude/
+文档/From Doubao-尚未校验正确性-不可用/
+文档/_过程文件/
+文档/运行结果/
+文档/.claude/
