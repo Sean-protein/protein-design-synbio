@@ -1,0 +1,298 @@
+
+===== PAGE 1 =====
+22002266 PPrrootteeiinn DDeessiiggnn iinn SSyynnbbiioo cchhaalllleennggeess
+11.. 目目标标、、规规则则、、提提交交内内容容
+本赛季基准对照升级为 ssffGGFFPP。赛道旨在挑战您运用计算生物学、生物信息学以及可编
+排的Agent工作流，在全全序序列列放放开开的条件下，设计出兼具极高初始亮度与极限热稳定性
+的新型绿色荧光蛋白（GFP）“六边形战士”
+11..11 您您的的提提交交内内容容（（核核心心序序列列文文件件、、说说明明文文档档、、开开源源仓仓库库代代码码））
+参赛队伍需在 SynBio Challenges 官网严格按以下格式提交三项内容：
+ 设设计计序序列列文文件件 ((..ccssvv))
+○ 数数量量与与长长度度：每队最多提交 66 条条 自己设计的蛋白序列。序列长度严格限制在 222200 --
+225500 aaaa 之间（没有以往位点数量的限制，本次为全全序序列列自自由由设设计计）。
+○ 字字符符规规范范：序列必必须须以以蛋蛋氨氨酸酸（（MM））开开头头。仅允许使用 20 种标准氨基酸的大写字母，
+严禁包含终止密码子（如 *）或标点符号。
+○ 本次由大设施统一合成 DNA 模板（已含启动子、RBS 及终止子，且浓度标准化），
+因此您您只只需需提提供供氨氨基基酸酸序序列列。本赛事使用开源 DNA Chisel 算法执行反向翻译。
+○ 请在提交前逐条与 Exclusion_List.csv 中的序列做完全一致性比对，确保您提交的
+6 条序列均未出现在我们提供的 Exclusion_List.csv 文件中。
+○ 表表头头规规范范：共三列，必须包含 Team_Name (队伍名), Seq_ID (如1,2,3...),
+Sequence (氨基酸序列)，可参考submission_template.csv
+
+===== PAGE 2 =====
+ 设设计计思思路路与与说说明明文文档档 ((..ppddff))
+○ 展示从零开始或组合现有模型（如 ESM, ProteinMPNN 等）生成序列的完整流程。
+阐述您的算法管线、如何平衡亮度和稳定性目标，以及最终筛选这 6 条序列的原因。
+○ LLM AAggeenntt：鼓励并欢迎使用各种大模型与代码 Agent。若使用智能体设计，需在
+文档中展示 Agent 的逻辑树和关键执行日志，以确保过程可复现。
+○ 该文档将作为评审团队的展示与思路参考。在客观得分相近的情况下，优先选择思
+路清晰、技术路径前沿且开源的队伍进行宣传和展示。
+ 开开源源项项目目链链接接 ((UURRLL))
+○ 须提交公开的 GitHub / GitLab / HuggingFace 等代码托管仓库链接，确保其它队伍
+可以复现。
+○ 根根目目录录需需包包含含 RREEAADDMMEE..mmdd，明确说明环境配置要求、模型依赖库以及推理代码运
+行方式。
+
+===== PAGE 3 =====
+11..22 自自动动化化实实验验流流程程 ((由由大大设设施施执执行行))
+所有序列的测试由大设施统一执行““一一次次表表达达 ++ 两两次次读读数数””流水线。本次实验采用的无
+细胞体系为 NNEEBBeexxpprreessss CCeellll--ffrreeee EE.. ccoollii PPrrootteeiinn SSyynntthheessiiss SSyysstteemm。
+● 步步骤骤一一：：初初始始亮亮度度检检测测
+1. 表表达达：在黑色平底 96 孔板中加入 Cell-Free 反应液与标准化浓度的 DNA 模板。
+置于恒温振荡器，3300°°CC 孵育 3 小时（保持振荡供氧）。
+2. 成成熟熟：降温至 2255°°CC 静置 30 分钟，确保发色团完全成熟。
+3. 读读数数 11：使用酶标仪读取初始荧光强度（Ex: 485nm / Em: 515nm），记为您序列
+的 。同批次野生型 sfGFP 的亮度记为 。
+● 步步骤骤二二：：极极端端热热稳稳定定性性检检测测
+1. 加加热热：自动化工作站将无细胞表达产物转移至 PCR 板并封膜。在 PCR 仪中执行
+7722°°CC 高温加热 1100 分分钟钟。
+2. 复复性性：PCR 仪自动降温至 2255°°CC 并保持 55 分分钟钟（消除温度的物理淬灭效应，仅测
+试因变性导致的不可逆荧光丧失）。
+3. 读读数数 22：读取加热后的残余荧光强度，记为 。
+11..33 得得分分规规则则
+本次赛事的评分采用“双能乘积制”，要求挑战者拒绝偏科，追求极限。
+● 项项一一：：相相对对亮亮度度得得分分 —— 评估蛋白在 Cell-Free 体系中的折叠效率与消光系数。
+● 项项二二：：热热稳稳定定性性保保留留率率 —— 评估蛋白抵抗 72°C 高温变性的能力。
+● 极极低低亮亮度度阈阈值值淘淘汰汰
+若 某 条 提 交 序 列 的 初 始 亮 度 不不 到到 同同 批批 次次 野野 生生 型型 ssffGGFFPP 的的 3300%% （ 即
+
+===== PAGE 4 =====
+），说明该序列基础结构/功能遭到严重破坏，该序列直接
+淘汰出局，此条序列两项及总成绩均记为 00 分分。
+● 双双能能综综合合得得分分
+● 排排名名与与奖奖项项分分配配
+○ 金金//银银奖奖：我们将以您提交的 6 条序列中得得分分最最高高的的一一条条（（BBeesstt TToopp--11））作为本队的
+最终打榜成绩进行排榜。前 30% 金奖、接下来若干比例银奖。
+○ 此外，设立由单项分决出的最最佳佳亮亮度度奖奖和最最佳佳热热稳稳定定奖奖作为独立荣誉。
+
+===== PAGE 5 =====
+22.. 数数据据与与资资料料介介绍绍
+22..11 GGFFPP 突突变变与与亮亮度度数数据据
+提供涵盖历史多品种 GFP 蛋白的数据集（GFP_data.xlsx），可用作大模型微调训练、
+序列-功能关系的预训练。
+(注：原始数据虽多为历史 avGFP/amacGFP 等短变体，并不直接等同于本赛季的
+sfGFP 提交空间，但掌握其中的普遍折叠密码和发色团微环境可很好地迁移至全序列
+设计)
+22..22 往往年年的的TToopp 序序列列
+GFP_data.xlsx 中sheet-beforetopseqs 提供历年优秀序列共 20 条（2024、2025 各
+10 条）及对应 year、sequence 字段，供您追溯历史特征工程设计思路。
+22..33 蛋蛋白白参参考考序序列列与与蛋蛋白白质质结结构构 PPDDBB 推推荐荐
+数据包提供 sfGFP、avGFP、amacGFP、cgreGFP、ppluGFP 共五条参考氨基酸序列
+及推荐 PDB（见 AAseqs of 5 GFP proteins.txt），供选手构建三维图神经网络（GNN）、
+Structure-based Agent 或逆向折叠模型（ProteinMPNN）时使用
+>sfGFP
+MSKGEELFTGVVPILVELDGDVNGHKFSVRGEGEGDATNGKLTLKFICTTGKLPVPWPTLVTTLTYGVQCFSRYPD
+HMKRHDFFKSAMPEGYVQERTISFKDDGTYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNFNSHNVYIT
+ADKQKNGIKANFKIRHNIVEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSVLSKDPNEKRDHMVLLEFVTAAGI
+THGMDELYK
+# recommend PDB: 2B3P
+22..44 排排除除序序列列列列表表
+Exclusion_List.csv。此文件包含禁止重复提交的序列名单（包含历史测过的序列、基于
+FPbase的天然或已知变体等），任何与排除列表中任意一条序列完全一致的提交序列
+视为无效，另可参考 FPbase( https://www.fpbase.org/ ) 等公开资源避免重复已知
+全长变体。
+
+===== PAGE 6 =====
+22..55 热热稳稳定定性性资资料料
+由于缺乏针对 72°C 温度直接测量的庞大开源数据集，建议选手多方拓展：
+● 先先验验知知识识引引入入：参考 sfGFP 本身（自带多重折叠极性突变）的基础，探索在β桶状
+结构域改进表面电荷网络、计算填补核心疏水空腔（如Rosetta Pack功能）等先验逻辑。
+● 模模型型降降维维：利用具有物理或结构感知能力的语言模型（如 ESM-3，SaProt）对耐热
+域嵌入处理进行对比分析学习，提取耐热特征。
+22..66 往往届届优优秀秀队队伍伍思思路路参参考考
+基基于于异异构构AAII模模型型集集成成与与多多级级级级联联漏漏斗斗筛筛选选的GFP高荧光Fitness框架。在特征学习阶段，
+算法并行构建了6个涵盖不同归纳偏置的异构模型（从TF-IDF离散表征、拓扑注意力机
+制，到ESM-1v、Tranception等前沿的大型蛋白质语言模型），实现序列及进化特征到荧
+光强度的定量回归预测；随后，对高通量GFP突变文库实施梯队式降维过滤：初筛阶段
+利用轻量级模型（Model 1 & 2）截留Top 5%预测结果并取交集以快速收敛搜索空间；
+中级过滤阶段引入高分辨率模型（Model 3）将候选池进一步提纯至Top 1.5%（约3351
+条序列）；终筛阶段则交由三大复杂预训练模型（Model 4/5/6）执行交叉验证与联合阈
+值截断
+22..77 竞竞赛赛入入门门教教程程
+不会部署模型？不知道从哪里开始？您可以参考访问基础教程教程为 2025 思路参考，
+2026须自行改路径、列名、WT、长度与提交格式：
+https://www.bohrium.com/notebooks/36787332597
+
+===== PAGE 7 =====
+22002266 PPrrootteeiinn DDeessiiggnn iinn SSyynnBBiioo CChhaalllleennggeess((eenngglliisshh))
+11.. OObbjjeeccttiivveess,, RRuulleess,, aanndd SSuubbmmiissssiioonn CCoonntteenntt
+This season, the baseline control has been upgraded to ssffGGFFPP. This track
+challenges you to utilize computational biology, bioinformatics, and orchestratable
+Agent workflows to design a novel Green Fluorescent Protein (GFP) ““aann aallll--aarroouunndd
+cchhaammppiioonn"" that possesses both extremely high initial brightness and extreme
+thermal stability, under the condition of full-sequence open design.
+11..11 YYoouurr SSuubbmmiissssiioonn CCoonntteenntt
+Participating teams must submit three items on the official SynBio Challenges
+website, strictly following the formats below:
+ DDeessiiggnn SSeeqquueennccee FFiillee ((..ccssvv))
+● QQuuaannttiittyy && LLeennggtthh:: Each team may submit a maximum of 66 self-designed
+protein sequences. The sequence length is strictly limited to between 222200 -- 225500 aaaa
+(There are no limitations on the number of mutation sites as in previous years; this
+time it is a full-sequence free design).
+● CChhaarraacctteerr NNoorrmmss:: Sequences must start with Methionine (M). Only the
+uppercase letters of the 20 standard amino acids are allowed. Stop codons (e.g., *)
+or punctuation marks are strictly prohibited.
+● SSyynntthheessiiss:: The mega-facility will uniformly synthesize the DNA templates
+(already containing the promoter, RBS, and terminator, with standardized
+concentration), so you only need to provide the amino acid sequences.Reverse
+translation will be performed using the open-source DNA Chisel algorithm.
+● EExxcclluussiioonn CChheecckk:: Before submitting, please cross-check each sequence
+against the Exclusion_List.csv to ensure that none of your 6 submitted sequences
+appear in the provided exclusion list.
+● HHeeaaddeerr NNoorrmmss:: The file must contain exactly three columns with the headers:
+Team_Name, Seq_ID (e.g., 1, 2, 3…), and Sequence (amino acid sequence). Please
+
+===== PAGE 8 =====
+refer to submission_template.csv.
+ DDeessiiggnn CCoonncceepptt aanndd DDooccuummeennttaattiioonn ((..ppddff))
+● WWoorrkkffllooww:: Showcase your complete pipeline for generating sequences, whether
+from scratch or by combining existing models (e.g., ESM, ProteinMPNN, etc.).
+Explain your algorithm pipeline, how you balanced the brightness and stability
+objectives, and the reasoning behind selecting these final 6 sequences.
+● LLLLMM AAggeenntt:: We encourage and welcome the use of various Large Language
+Models and code Agents. If an Agent was used for the design, you must display the
+Agent’s logic tree and key execution logs in the document to ensure the process is
+reproducible.
+● EEvvaalluuaattiioonn:: This document will serve as a presentation and conceptual
+reference for the judging panel. In cases where objective scores are similar, teams
+with clear logic, cutting-edge technical pathways, and open-source practices will be
+prioritized for promotion and showcase.
+ OOppeenn--SSoouurrccee PPrroojjeecctt LLiinnkk ((UURRLL))
+● You must submit a public code hosting repository link (GitHub / GitLab /
+HuggingFace...) to ensure other teams can reproduce your work.
+● The root directory must contain a README.md that clearly explains the
+environment configuration requirements, model dependency libraries, and
+instructions on how to run the inference code.
+
+===== PAGE 9 =====
+11..22 AAuuttoommaatteedd EExxppeerriimmeennttaall WWoorrkkffllooww
+SStteepp 11:: IInniittiiaall BBrriigghhttnneessss DDeetteeccttiioonn
+1. EExxpprreessssiioonn:: Incubate DNA templates in a cell-free reaction at 30°C for 3 hours.
+2. MMaattuurraattiioonn:: Cool to 25°C for 30 minutes for chromophore maturation.
+3. RReeaaddiinngg 11:: Measure initial fluorescence (Ex: 485nm / Em: 515nm). Your
+sequence’s brightness:
+a. Wild-type sfGFP brightness:
+SStteepp 22:: EExxttrreemmee TThheerrmmaall SSttaabbiilliittyy DDeetteeccttiioonn
+1. HHeeaattiinngg:: Heat the products at 7722°°CC ffoorr 1100 mmiinnuutteess in a PCR machine.
+2. RReennaattuurraattiioonn:: Cool to 25°C for 5 minutes to eliminate physical quenching.
+3. RReeaaddiinngg 22:: Measure residual fluorescence intensity. Residual brightness:
+11..33 SSccoorriinngg RRuulleess
+The scoring adopts a ““DDuuaall--PPeerrffoorrmmaannccee PPrroodduucctt SSyysstteemm,,”” requiring challengers
+to pursue extreme performance in both categories.
+● MMeettrriicc 11:: RReellaattiivvee BBrriigghhttnneessss SSccoorree
+
+===== PAGE 10 =====
+Evaluates folding efficiency and extinction coefficient in the Cell-Free system.
+● MMeettrriicc 22:: TThheerrmmaall SSttaabbiilliittyy RReetteennttiioonn RRaattee
+Evaluates the ability to resist denaturation at 72°C.
+● EExxttrreemmeellyy LLooww BBrriigghhttnneessss EElliimmiinnaattiioonn
+If a sequence’s initial brightness is lleessss tthhaann 3300%% of the wild-type sfGFP:
+The sequence is ddiissqquuaalliiffiieedd, and its scores are recorded as 00.
+● CCoommpprreehheennssiivvee DDuuaall--PPeerrffoorrmmaannccee SSccoorree
+● RRaannkkiinngg aanndd AAwwaarrddss
+○ GGoolldd//SSiillvveerr AAwwaarrddss:: Based on your team’s BBeesstt TToopp--11 sequence score.
+Top 30% receive Gold Awards.
+○ SSppeecciiaall HHoonnoorrss:: Independent awards for “Best Brightness” and “Best
+Thermal Stability.”
+
+===== PAGE 11 =====
+22.. DDaattaa aanndd RReessoouurrcceess IInnttrroodduuccttiioonn
+22..11 GGFFPP MMuuttaattiioonn aanndd BBrriigghhttnneessss DDaattaa
+We provide a dataset (GFP_data.xlsx) covering historical data of multiple GFP
+protein variants, which can be used for LLM fine-tuning and pre-training of
+sequence-function relationships.
+(Note: Although the raw data mostly consists of historical short variants like
+avGFP/amacGFP and does not directly equate to this season’s sfGFP submission
+space, mastering the universal folding codes and chromophore microenvironments
+within them can be well transferred to full-sequence design).
+22..22 TToopp SSeeqquueenncceess ffrroomm PPrreevviioouuss YYeeaarrss
+The bbeeffoorreettooppsseeqqss wwoorrkksshheeeett in GGFFPP__ddaattaa..xxllssxx provides a total of 20 outstanding
+sequences from previous years along with corresponding year and sequence fields,
+allowing you to trace historical feature engineering design concepts.
+22..33 RReeffeerreennccee PPrrootteeiinn SSeeqquueenncceess aanndd RReeccoommmmeennddeedd PPDDBBss
+The data package provides five reference amino acid sequences (sfGFP, avGFP,
+amacGFP, cgreGFP, ppluGFP) and recommended PDBs (see AAseqs of 5 GFP
+proteins.txt). These are provided for participants to use when building 3D Graph
+Neural Networks (GNNs), Structure-based Agents, or inverse folding models (like
+ProteinMPNN).
+>sfGFP
+MSKGEELFTGVVPILVELDGDVNGHKFSVRGEGEGDATNGKLTLKFICTTGKLPVPWPTLVTTLTYG
+VQCFSRYPDHMKRHDFFKSAMPEGYVQERTISFKDDGTYKTRAEVKFEGDTLVNRIELKGIDFKEDG
+NILGHKLEYNFNSHNVYITADKQKNGIKANFKIRHNIVEDGSVQLADHYQQNTPIGDGPVLLPDNHYL
+STQSVLSKDPNEKRDHMVLLEFVTAAGITHGMDELYK
+# recommend PDB: 2B3P
+22..44 EExxcclluussiioonn LLiisstt
+Exclusion_List.csv. This file contains a list of sequences that are prohibited from
+being submitted (including historically tested sequences, natural or known variants
+based on FPbase, etc.). Any submitted sequence that is completely identical to any
+sequence in the exclusion list will be considered invalid. You may also refer to public
+resources like FPbase( https://www.fpbase.org/ ) to avoid duplicating known
+full-length variants.
+
+===== PAGE 12 =====
+22..55 TThheerrmmaall SSttaabbiilliittyy RReessoouurrcceess
+Due to the lack of massive open-source datasets directly measured at 72°C,
+participants are advised to expand their approaches in multiple ways:
+● IInnttrroodduuccttiioonn ooff PPrriioorr KKnnoowwlleeddggee:: Based on sfGFP itself (which inherently has
+multiple folding polarity mutations), explore prior logic such as introducing disulfide
+bond combinations improving the surface charge network, and computationally filling
+the core hydrophobic cavity (e.g., Rosetta Pack function).
+● MMooddeell DDiimmeennssiioonnaalliittyy RReedduuccttiioonn:: Utilize language models with physical or
+structural awareness (e.g., ESM-3, SaProt) to conduct comparative analysis and
+learning on heat-resistant domain embeddings to extract heat-resistant features.
+22..66 RReeffeerreennccee ffoorr PPrreevviioouuss OOuuttssttaannddiinngg TTeeaammss’’ AApppprrooaacchheess
+Example: A high-fluorescence Fitness framework for GFP based on heterogeneous
+AI model integration and multi-stage cascade funnel screening. In the feature
+learning stage, the algorithm built 6 heterogeneous models in parallel covering
+different inductive biases (from TF-IDF discrete representations and topological
+attention mechanisms to cutting-edge large protein language models like ESM-1v
+and Tranception) to achieve quantitative regression prediction of fluorescence
+intensity from sequence and evolutionary features. Subsequently, a tiered
+dimensionality reduction filtration was applied to the high-throughput GFP mutation
+library: the initial screening stage used lightweight models (Model 1 & 2) to intercept
+the Top 5% prediction results and take the intersection to quickly converge the
+search space; the intermediate filtration stage introduced a high-resolution model
+(Model 3) to further purify the candidate pool to the Top 1.5% (about 3,351
+sequences); the final screening stage was handed over to three major complex
+pre-trained models (Model 4/5/6) to execute cross-validation and joint threshold
+truncation.
+
+===== PAGE 13 =====
+22..77 CCoommppeettiittiioonn SSttaarrtteerr TTuuttoorriiaall
+Struggling with model deployment? Not sure where to start? You can refer to the
+basic tutorials for 2025 as a reference; for 2026, you will need to modify the paths,
+column names, WT, lengths, and submission formats on your own.
+https://www.bohrium.com/notebooks/36787332597
+WWiisshhiinngg yyoouu tthhee bbeesstt ooff lluucckk iinn ccrreeaattiinngg aa ““ppeerrffeecctt pprrootteeiinn”” tthhaatt bbrreeaakkss tthhee
+rruulleess ooff lliiffee iinn 22002266!!
+
+===== PAGE 14 =====
+33..参参考考文文献献//RReeffeerreennccee
+[1] mBaoJin.pdf
+Zhang H, Lesnov GD, Subach OM, Zhang W, Kuzmicheva TP, Vlaskina AV,
+Samygina VR, Chen L, Ye X, Nikolaeva AY, Gabdulkhakov A, Papadaki S, Qin W,
+Borshchevskiy V, Perfilov MM, Gavrikov AS, Drobizhev M, Mishin AS, Piatkevich
+KD, Subach FV. Bright and stable monomeric green fluorescent protein derived
+from StayGold. Nat Methods 2024; 21: 657–665.
+https://doi.org/10.1038/s41592-024-02203-y
+[2] nature-Local fitness landscape of the green fluorescent protein.pdf
+Sarkisyan KS, Bolotin DA, Meer MV, Usmanova DR, Mishin AS, Sharonov GV,
+Ivankov DN, Bozhanova NG, Baranov MS, Soylemez O, Bogatyreva NS, Vlasov
+PK, Egorov ES, Logacheva MD, Kondrashov AS, Chudakov DM, Putintseva EV,
+Mamedov IZ, Tawfik DS, Lukyanov KA, Kondrashov FA. Local fitness landscape of
+the green fluorescent protein. Nature 2016; 533: 397–401.
+https://doi.org/10.1038/nature17995
+[3] Staygold.pdf
+Hirano M, Ando R, Shimozono S, Sato H, Kaneko R, Okada Y, Niino Y, Miyawaki A.
+A highly photostable and bright green fluorescent protein. Nat Biotechnol
+2022;40:1132–1142. https://doi.org/10.1038/s41587-022-01278-2
+[4] superfolder.pdf
+Pedelacq J-D, Cabantous S, Tran T, Terwilliger TC, Waldo GS. Engineering and
+characterization of a superfolder green fluorescent protein. Nat Biotechnol
+2006;24:79–88. https://doi.org/10.1038/nbt1172
+[5] TGP, an extremely stable, non-aggregating fluorescent protein.pdf
+Close DW, Paul CD, Langan PS, Wilce MCJ, Traore DAK, Halfmann R, Rocha RC,
+Waldo GS, Payne RJ, Rucker JB, Prescott M, Bradbury ARM. Thermal green
+protein, an extremely stable, nonaggregating fluorescent protein created by
+structure-guided surface engineering. Proteins 2015; 83: 1225–1237.
+https://doi.org/10.1002/prot.24699

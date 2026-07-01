@@ -1,0 +1,57 @@
+# === Everything by default ===
+*
+
+# === ALLOW: Core pipeline code ===
+!code/
+!code/funnel_phase*.py
+!code/final_selection.py
+!code/strategy_A_enum.py
+!code/strategy_B/
+!code/strategy_B/*.py
+!code/strategy_B/__init__.py
+!code/strategy_C_*.py
+!code/strategy_D_*.py
+!code/strategy_B_virtual_screen.py
+!code/strategy_B_full_screen.py
+!code/virtual_screen_analysis.py
+!code/merge_gpu_results.py
+!code/generate_pipeline_diagram.py
+!code/build_polished_docx.py
+
+# === ALLOW: Final results ===
+!results/
+!results/submission_6_sequences.csv
+!results/funnel_phase5_final_6.csv
+!results/funnel_phase2_top80.csv
+!results/funnel_phase1_pool.csv
+!results/strategy_A_foldx_results.csv
+!results/strategy_A_candidates.csv
+!results/strategy_D_foldx_results.csv
+!results/strategy_D_all_candidates.csv
+!results/strategy_D_ddg_map.csv
+!results/strategy_B/
+!results/strategy_B/candidate_scores.csv
+!results/strategy_B/test_scores.json
+!results/strategy_C/
+!results/strategy_C/strategy_C_candidates.csv
+
+# === ALLOW: Competition data ===
+!competition/
+!competition/competition_rules.txt
+!competition/submission_template.csv
+!competition/Exclusion_List.csv
+!competition/GFP_data.xlsx
+!competition/AAseqs*.txt
+
+# === ALLOW: Documentation ===
+!docs/
+!docs/final_submission/
+!docs/final_submission/design_document.md
+!docs/final_submission/design_document.docx
+!docs/final_submission/design_document.pdf
+!docs/final_submission/pipeline_diagram.svg
+
+# === ALLOW: Root files ===
+!README.md
+!requirements.txt
+!.gitignore
